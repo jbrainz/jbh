@@ -42,10 +42,11 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: '1em',
   },
   serviceBlock: {
-    marginTop: '12em',
+    marginTop: '6em',
     marginBottom: '5em',
     [theme.breakpoints.down('sm')]: {
       padding: 25,
+      marginTop: '3em',
     },
   },
 }));
@@ -82,7 +83,7 @@ const Services = (props) => {
             <Button
               component={Link}
               to="/book"
-              onCllick={() => setValue(5)}
+              onClick={() => setValue(5)}
               variant="outlined"
               className={classes.learnMore}
             >
@@ -128,7 +129,7 @@ const Services = (props) => {
             <Button
               component={Link}
               to="/book"
-              onCllick={() => {
+              onClick={() => {
                 setValue(5);
               }}
               variant="outlined"
@@ -176,7 +177,7 @@ const Services = (props) => {
             <Button
               component={Link}
               to="/book"
-              onCllick={() => setValue(5)}
+              onClick={() => setValue(5)}
               variant="outlined"
               variant="outlined"
               className={classes.learnMore}

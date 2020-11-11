@@ -9,6 +9,7 @@ export default createMuiTheme({
     common: {
       blue: `${arcBlue}`,
       orange: `${arcOrange}`,
+      green: arcGreen,
     },
     primary: {
       main: `${arcOrange}`,
@@ -73,10 +74,33 @@ export default createMuiTheme({
       lineHeight: '24px',
       minHeight: '150px',
     },
+    body1: {
+      fontSize: '1.2rem',
+      color: arcGray,
+      fontWeight: '300',
+    },
     subtitle2: {
       color: '#fff',
       fontSize: '1.25rem',
       fontWeight: '300',
+    },
+  },
+  overrides: {
+    MuiInputLabel: {
+      root: {
+        color: arcBlue,
+        fontSize: '1rem',
+      },
+    },
+    MuiInput: {
+      underline: {
+        '&:before': {
+          borderBottom: `2px solid ${arcBlue}`,
+        },
+        '&:hover:not($disabled):not($focused):not($error):before': {
+          borderBottom: `2px solid ${arcBlue}`,
+        },
+      },
     },
   },
 });

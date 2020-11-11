@@ -72,7 +72,8 @@ const useStyles = makeStyles((theme) => ({
   },
   menuItem: {
     ...theme.typography.tab,
-    opacity: 0.7,
+    color: '#000',
+    opacity: 0.6,
     '&:hover': {
       opacity: 1,
     },
@@ -184,9 +185,8 @@ const Header = (props) => {
       ariaPopup: anchorEl ? 'true' : undefined,
       mouseOver: (event) => handleClick(event),
     },
-    { name: 'Destination', link: '/destination', activeIndex: 2 },
-    { name: 'About Us', link: '/about', activeIndex: 3 },
-    { name: 'Contact Us', link: '/contact', activeIndex: 4 },
+    { name: 'About Us', link: '/about', activeIndex: 2 },
+    { name: 'Contact Us', link: '/contact', activeIndex: 3 },
   ];
 
   useEffect(() => {
@@ -231,19 +231,19 @@ const Header = (props) => {
       </Tabs>
       <Button
         component={Link}
-        to="/book"
+        to='/book'
         onClick={() => setValue(5)}
-        variant="contained"
-        color="secondary"
+        variant='contained'
+        color='secondary'
         className={classes.button}
         component={Link}
-        to="/book"
+        to='/book'
       >
         Book Now
       </Button>
       <Menu
         keepMounted
-        id="simple-menu"
+        id='simple-menu'
         anchorEl={anchorEl}
         open={openMenu}
         onClose={handleClose}
@@ -288,11 +288,12 @@ const Header = (props) => {
         <List disablePadding>
           {routes.map((route) => (
             <ListItem
-              key={`${route}${route.activeIndex}`}
               divider
+              key={`${route}${route.activeIndex}`}
               button
               component={Link}
               to={route.link}
+              className={classes.options}
               selected={value === route.activeIndex}
               classes={{ selected: classes.drawerItemSelected }}
               onClick={() => {
@@ -312,7 +313,7 @@ const Header = (props) => {
             }}
             divider
             component={Link}
-            to="/book"
+            to='/book'
             selected={value === 5}
             classes={{ selected: classes.drawerItemSelected }}
           >
@@ -335,16 +336,16 @@ const Header = (props) => {
   return (
     <Fragment>
       <ElevationScroll>
-        <AppBar position="fixed" className={classes.appbar}>
+        <AppBar position='fixed' className={classes.appbar}>
           <Toolbar disableGutters>
             <Button
               disableRipple
               onClick={() => setValue(0)}
               component={Link}
-              to="/"
+              to='/'
               className={classes.logoContainer}
             >
-              <img className={classes.logo} src={logo} alt="company logo" />
+              <img className={classes.logo} src={logo} alt='company logo' />
             </Button>
             {matches ? drawer : tabs}
           </Toolbar>

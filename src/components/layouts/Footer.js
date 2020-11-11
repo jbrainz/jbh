@@ -61,16 +61,16 @@ const Footer = (props) => {
   return (
     <footer className={classes.footer}>
       <Hidden mdDown>
-        <Grid container justify="center" className={classes.mainContainer}>
+        <Grid container justify='center' className={classes.mainContainer}>
           <Grid item style={{ margin: '3em' }}>
-            <Grid container direction="column" spacing={2}>
+            <Grid container direction='column' spacing={2}>
               <Grid
                 item
                 component={Link}
                 onClick={() => {
                   setValue(0);
                 }}
-                to="/"
+                to='/'
                 className={classes.link}
               >
                 Home
@@ -78,7 +78,7 @@ const Footer = (props) => {
             </Grid>
           </Grid>
           <Grid item style={{ margin: '3em' }}>
-            <Grid container direction="column" spacing={2}>
+            <Grid container direction='column' spacing={2}>
               <Grid
                 item
                 component={Link}
@@ -86,7 +86,7 @@ const Footer = (props) => {
                   setValue(1);
                   setSelectedIndex(0);
                 }}
-                to="/services"
+                to='/services'
                 className={classes.link}
               >
                 Services
@@ -98,7 +98,7 @@ const Footer = (props) => {
                   setValue(1);
                   setSelectedIndex(1);
                 }}
-                to="/airport-transfer"
+                to='/airport-transfer'
                 className={classes.link}
               >
                 Airport Transfer
@@ -110,7 +110,7 @@ const Footer = (props) => {
                   setValue(1);
                   setSelectedIndex(2);
                 }}
-                to="/bus-rentals"
+                to='/bus-rentals'
                 className={classes.link}
               >
                 Bus Rentals
@@ -122,14 +122,14 @@ const Footer = (props) => {
                   setValue(1);
                   setSelectedIndex(3);
                 }}
-                to="/vip-transfer"
+                to='/vip-transfer'
                 className={classes.link}
               >
                 VIP Transfer
               </Grid>
             </Grid>
           </Grid>
-          <Grid item style={{ margin: '3em' }}>
+          {/* <Grid item style={{ margin: '3em' }}>
             <Grid container direction="column" spacing={2}>
               <Grid
                 item
@@ -165,16 +165,16 @@ const Footer = (props) => {
                 Local Destinations
               </Grid>
             </Grid>
-          </Grid>
+          </Grid> */}
           <Grid item style={{ margin: '3em' }}>
-            <Grid container direction="column" spacing={2}>
+            <Grid container direction='column' spacing={2}>
               <Grid
                 item
                 component={Link}
                 onClick={() => {
                   setValue(3);
                 }}
-                to="/about"
+                to='/about'
                 className={classes.link}
               >
                 About Us
@@ -185,7 +185,7 @@ const Footer = (props) => {
                 onClick={() => {
                   setValue(3);
                 }}
-                to="/about"
+                to='/about'
                 className={classes.link}
               >
                 History
@@ -196,7 +196,7 @@ const Footer = (props) => {
                 onClick={() => {
                   setValue(3);
                 }}
-                to="/about"
+                to='/about'
                 className={classes.link}
               >
                 Meet Our Team
@@ -204,14 +204,14 @@ const Footer = (props) => {
             </Grid>
           </Grid>
           <Grid item style={{ margin: '3em' }}>
-            <Grid container direction="column" spacing={2}>
+            <Grid container direction='column' spacing={2}>
               <Grid
                 item
                 component={Link}
                 onClick={() => {
                   setValue(4);
                 }}
-                to="/contact"
+                to='/contact'
                 className={classes.link}
               >
                 Contact us
@@ -221,42 +221,42 @@ const Footer = (props) => {
         </Grid>
       </Hidden>
       <img
-        alt="black decorative slash"
+        alt='black decorative slash'
         src={footerAdornment}
         className={classes.adornment}
       />
       <Grid
         container
-        justify="flex-end"
+        justify='flex-end'
         spacing={2}
         className={classes.socialContainer}
       >
         <Grid
           item
           component={'a'}
-          href="https://www.facebook.com"
-          rel="noopener noreferrer"
-          target="_blank"
+          href='https://www.facebook.com'
+          rel='noopener noreferrer'
+          target='_blank'
         >
-          <img alt="facebook" src={facebook} className={classes.icon} />
+          <img alt='facebook' src={facebook} className={classes.icon} />
         </Grid>
         <Grid
           item
           component={'a'}
-          href="https://www.twitter.com"
-          rel="noopener noreferrer"
-          target="_blank"
+          href='https://www.twitter.com'
+          rel='noopener noreferrer'
+          target='_blank'
         >
-          <img alt="twitter" src={twitter} className={classes.icon} />
+          <img alt='twitter' src={twitter} className={classes.icon} />
         </Grid>
         <Grid
           component={'a'}
-          href="https://www.instagram.com"
+          href='https://www.instagram.com'
           item
-          rel="noopener noreferrer"
-          target="_blank"
+          rel='noopener noreferrer'
+          target='_blank'
         >
-          <img alt="instagram" src={instagram} className={classes.icon} />
+          <img alt='instagram' src={instagram} className={classes.icon} />
         </Grid>
       </Grid>
     </footer>

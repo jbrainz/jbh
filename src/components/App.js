@@ -5,7 +5,11 @@ import Header from '../components/layouts/Header';
 import theme from './layouts/Theme';
 import Footer from '../components/layouts/Footer';
 import LandingPage from '../components/Home/LandingPage';
-import Service from '../components/services/Services';
+import Service from '../components/pages/Services';
+import AirportTransfer from '../components/pages/AirportTransfer';
+import BusRentals from '../components/pages/BusRentals';
+import About from '../components/pages/About';
+import ContactUs from '../components/pages/ContactUs';
 
 function App() {
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -23,7 +27,7 @@ function App() {
         <Switch>
           <Route
             exact
-            path="/"
+            path='/'
             render={(props) => (
               <LandingPage
                 {...props}
@@ -34,42 +38,45 @@ function App() {
           />
           <Route
             exact
-            path="/services"
+            path='/services'
             render={(props) => <Service {...props} />}
           />
           <Route
             exact
-            path="/fleet"
+            path='/fleet'
             component={() => <div>Explore Our Fleets</div>}
           />
-          <Route exact path="/about" component={() => <div>About Us</div>} />
+          <Route exact path='/about' render={(props) => <About />} />
+          <Route exact path='/contact' render={(props) => <ContactUs />} />
+          <Route exact path='/book' component={() => <div>book a ride</div>} />
+          <Route exact path='/login' component={() => <div>Login now</div>} />
+          <Route exact path='/sign-up' component={() => <div>Sign Up</div>} />
           <Route
             exact
-            path="/contact"
-            component={() => <div>Contact Us</div>}
-          />
-          <Route exact path="/book" component={() => <div>book a ride</div>} />
-          <Route
-            exact
-            path="/destination"
-            component={() => <div>Destinations</div>}
-          />
-          <Route exact path="/login" component={() => <div>Login now</div>} />
-          <Route exact path="/sign-up" component={() => <div>Sign Up</div>} />
-          <Route
-            exact
-            path="/bus-rental"
-            component={() => <div>Bus Rental</div>}
+            path='/bus-rental'
+            render={(props) => (
+              <BusRentals
+                {...props}
+                setValue={setValue}
+                setSelectedIndex={setSelectedIndex}
+              />
+            )}
           />
           <Route
             exact
-            path="/vip-transfer"
+            path='/vip-transfer'
             component={() => <div>Vip Transfer</div>}
           />
           <Route
             exact
-            path="/airport-transfer"
-            component={() => <div>Airport Transfer</div>}
+            path='/airport-transfer'
+            render={(props) => (
+              <AirportTransfer
+                {...props}
+                setValue={setValue}
+                setSelectedIndex={setSelectedIndex}
+              />
+            )}
           />
         </Switch>
         <Footer

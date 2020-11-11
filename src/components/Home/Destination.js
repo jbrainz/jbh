@@ -72,7 +72,7 @@ const Destination = (props) => {
               <CardActions>
                 <Button
                   component={Link}
-                  to="/book"
+                  to="/vip-transfer"
                   onClick={() => {
                     setValue(1);
                     setSelectedIndex(3);
@@ -107,7 +107,7 @@ const Destination = (props) => {
               <CardActions>
                 <Button
                   component={Link}
-                  to="/book"
+                  to="/airport-transfer"
                   onClick={() => {
                     setValue(1);
                     setSelectedIndex(1);
@@ -142,7 +142,7 @@ const Destination = (props) => {
               <CardActions>
                 <Button
                   component={Link}
-                  to="/book"
+                  to="/bus-rental"
                   onClick={() => {
                     setValue(1);
                     setSelectedIndex(3);
