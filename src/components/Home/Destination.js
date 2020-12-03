@@ -1,50 +1,54 @@
-import React, { Fragment } from 'react';
-import { Link } from 'react-router-dom';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
+import React, { Fragment } from "react"
+import { Link } from "react-router-dom"
+import { makeStyles, useTheme } from "@material-ui/core/styles"
+import Grid from "@material-ui/core/Grid"
+import Button from "@material-ui/core/Button"
+import Typography from "@material-ui/core/Typography"
 import {
   Card,
   CardActionArea,
   CardActions,
   CardContent,
   CardMedia,
-} from '@material-ui/core';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
+} from "@material-ui/core"
+import useMediaQuery from "@material-ui/core/useMediaQuery"
 
-import use_image from '../../assets/use_image.jpg';
-import ButtonArrow from '../layouts/Custom/ButtonArrow';
-import bus from '../../assets/bus.jpg';
+import use_image from "../../assets/use_image.jpg"
+import airport_image from "../assets/img/airport-tax.jpg"
+import bus_rentals from "../assets/img/bus_rentals.jpg"
+
+import vip_image from "../assets/img/vip.jpg"
+import ButtonArrow from "../layouts/Custom/ButtonArrow"
+import bus from "../../assets/bus.jpg"
 
 const useStyles = makeStyles((theme) => ({
-  image: { height: '15em' },
+  image: { height: "15em" },
   root: { maxWidth: 345 },
   cardComponent: {
-    marginTop: '12em',
-    marginLeft: '5em',
-    marginBottom: '5em',
-    [theme.breakpoints.down('sm')]: {
-      margin: '2em',
-      marginTop: '8em',
+    marginTop: "12em",
+    marginLeft: "5em",
+    marginBottom: "5em",
+    [theme.breakpoints.down("sm")]: {
+      margin: "2em",
+      marginTop: "8em",
     },
   },
   infoBackground: {
     backgroundImage: `url(${bus})`,
-    backgroundPosition: 'center',
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
-    height: '100%',
-    width: '100%',
+    backgroundPosition: "center",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    height: "100%",
+    width: "100%",
   },
-}));
+}))
 
 const Destination = (props) => {
-  const { setValue, setSelectedIndex } = props;
-  const classes = useStyles();
-  const theme = useTheme();
-  const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));
-  const matchesXS = useMediaQuery(theme.breakpoints.down('xs'));
+  const { setValue, setSelectedIndex } = props
+  const classes = useStyles()
+  const theme = useTheme()
+  const matchesSM = useMediaQuery(theme.breakpoints.down("sm"))
+  const matchesXS = useMediaQuery(theme.breakpoints.down("xs"))
 
   return (
     <Fragment>
@@ -52,11 +56,11 @@ const Destination = (props) => {
         <Grid container>
           <Grid item className={classes.cardComponent}>
             <Card className={classes.root}>
-              <CardActionArea>
+              <CardActionArea component={Link} to="/book">
                 <CardMedia
                   className={classes.image}
                   title="City Taxi"
-                  image={use_image}
+                  image={vip_image}
                 />
                 <CardContent>
                   <Typography variant="h5" component="h2">
@@ -64,18 +68,19 @@ const Destination = (props) => {
                   </Typography>
                   <Typography variant="body2" component="p">
                     The perfect way to get through <br /> everyday travel needs.
-                    City taxi are available 24/7 <br />
-                    and you can travel in an instant.
+                    Vip transfer services is what you need to avoid a hectic
+                    day! <br />
+                    Let's get you started.
                   </Typography>
                 </CardContent>
               </CardActionArea>
               <CardActions>
                 <Button
                   component={Link}
-                  to="/vip-transfer"
+                  to="/book"
                   onClick={() => {
-                    setValue(1);
-                    setSelectedIndex(3);
+                    setValue(1)
+                    setSelectedIndex(3)
                   }}
                   size="small"
                   color="primary"
@@ -87,11 +92,11 @@ const Destination = (props) => {
           </Grid>
           <Grid item item className={classes.cardComponent}>
             <Card className={classes.root}>
-              <CardActionArea>
+              <CardActionArea component={Link} to="/book">
                 <CardMedia
                   className={classes.image}
                   title="City Taxi"
-                  image={use_image}
+                  image={airport_image}
                 />
                 <CardContent>
                   <Typography variant="h5" component="h2">
@@ -109,8 +114,8 @@ const Destination = (props) => {
                   component={Link}
                   to="/airport-transfer"
                   onClick={() => {
-                    setValue(1);
-                    setSelectedIndex(1);
+                    setValue(1)
+                    setSelectedIndex(1)
                   }}
                   size="small"
                   color="primary"
@@ -122,20 +127,20 @@ const Destination = (props) => {
           </Grid>
           <Grid item item className={classes.cardComponent}>
             <Card className={classes.root}>
-              <CardActionArea>
+              <CardActionArea component={Link} to="/book">
                 <CardMedia
                   className={classes.image}
                   title="City Taxi"
-                  image={use_image}
+                  image={bus_rentals}
                 />
                 <CardContent>
                   <Typography variant="h5" component="h2">
                     Bus Rentals
                   </Typography>
                   <Typography variant="body2" component="p">
-                    The perfect way to get through <br /> everyday travel needs.
-                    City taxi are available 24/7 <br />
-                    and you can travel in an instant.
+                    Our rentals services are the <br /> best you can get out
+                    there. Anytime any day 24/7 <br />
+                    just put a call through or send us a message.
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -144,8 +149,8 @@ const Destination = (props) => {
                   component={Link}
                   to="/bus-rental"
                   onClick={() => {
-                    setValue(1);
-                    setSelectedIndex(3);
+                    setValue(1)
+                    setSelectedIndex(3)
                   }}
                   size="small"
                   color="primary"
@@ -160,7 +165,7 @@ const Destination = (props) => {
       <Grid item>
         <Grid
           container
-          style={{ height: '40em' }}
+          style={{ height: "40em" }}
           direction="row"
           alignItems="center"
           className={classes.infoBackground}
@@ -169,19 +174,19 @@ const Destination = (props) => {
             item
             container
             style={{
-              textAlign: matchesXS ? 'center' : 'inherit',
+              textAlign: matchesXS ? "center" : "inherit",
             }}
-            direction={matchesXS ? 'column' : 'row'}
+            direction={matchesXS ? "column" : "row"}
           >
             <Grid
               item
               sm
-              style={{ marginLeft: matchesXS ? 0 : matchesSM ? '2em' : '5em' }}
+              style={{ marginLeft: matchesXS ? 0 : matchesSM ? "2em" : "5em" }}
             >
               <Grid
                 container
                 direction="column"
-                style={{ marginBottom: matchesXS ? '8em' : 0 }}
+                style={{ marginBottom: matchesXS ? "8em" : 0 }}
               >
                 <Typography
                   variant="h2"
@@ -199,8 +204,8 @@ const Destination = (props) => {
                     onClick={() => setValue(3)}
                     variant="outlined"
                     style={{
-                      color: 'white',
-                      borderColor: 'white',
+                      color: "white",
+                      borderColor: "white",
                       borderRadius: 20,
                     }}
                   >
@@ -214,8 +219,8 @@ const Destination = (props) => {
               item
               sm
               style={{
-                marginRight: matchesXS ? 0 : matchesSM ? '2em' : '5em',
-                textAlign: matchesXS ? 'center' : 'right',
+                marginRight: matchesXS ? 0 : matchesSM ? "2em" : "5em",
+                textAlign: matchesXS ? "center" : "right",
               }}
             >
               <Grid container direction="column">
@@ -233,15 +238,15 @@ const Destination = (props) => {
                     onClick={() => setValue(4)}
                     variant="outlined"
                     style={{
-                      color: 'white',
-                      borderColor: 'white',
+                      color: "white",
+                      borderColor: "white",
                       borderRadius: 20,
                     }}
                   >
                     <span
                       style={{
                         marginRight: 10,
-                        color: '#fff',
+                        color: "#fff",
                       }}
                     >
                       Now
@@ -255,7 +260,7 @@ const Destination = (props) => {
         </Grid>
       </Grid>
     </Fragment>
-  );
-};
+  )
+}
 
-export default Destination;
+export default Destination

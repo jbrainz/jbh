@@ -1,24 +1,23 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
-import { Grid, Typography, Button, TextField } from '@material-ui/core';
+import React, { useState } from "react"
+import { makeStyles, useTheme } from "@material-ui/core/styles"
+import { Grid, Typography, Button, TextField } from "@material-ui/core"
 
-import fleet from '../../assets/fleet.jpg';
-import phoneIcon from '../../assets/phone.svg';
-import emailIcon from '../../assets/email.svg';
-import airplane from '../../assets/send.svg';
+import fleet from "../../assets/fleet.jpg"
+import phoneIcon from "../../assets/phone.svg"
+import emailIcon from "../../assets/email.svg"
+import airplane from "../../assets/send.svg"
 
 const useStyles = makeStyles((theme) => ({
   background: {
     backgroundImage: `url(${fleet})`,
-    backgroundPosition: 'center',
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
-    height: '60em',
+    backgroundPosition: "center",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    height: "60em",
   },
   message: {
     border: `2px solid ${theme.palette.common.blue}`,
-    marginTop: '5em',
+    marginTop: "5em",
     borderRadius: 10,
   },
   send: {
@@ -26,118 +25,119 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: 50,
     height: 45,
     width: 245,
-    fontSize: '1rem',
+    fontSize: "1rem",
     backgroundColor: theme.palette.common.orange,
-    '&:hover': {
+    "&:hover": {
       backgroundColor: theme.palette.secondary.light,
     },
   },
-}));
+}))
 
 const ContactUs = () => {
-  const classes = useStyles();
-  const theme = useTheme();
-  const [name, setName] = useState('');
+  const classes = useStyles()
+  const theme = useTheme()
+  const [name, setName] = useState("")
 
-  const [email, setEmail] = useState('');
-  const [emailHelper, setEmailHelper] = useState('');
+  const [email, setEmail] = useState("")
+  const [emailHelper, setEmailHelper] = useState("")
 
-  const [phone, setPhone] = useState('');
-  const [phoneHelper, setPhoneHelper] = useState('');
+  const [phone, setPhone] = useState("")
+  const [phoneHelper, setPhoneHelper] = useState("")
 
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState("")
 
   const onChange = (e) => {
-    let valid;
+    let valid
 
     switch (e.target.id) {
-      case 'email':
-        setEmail(e.target.value);
+      case "email":
+        setEmail(e.target.value)
         valid = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(
           e.target.value,
-        );
+        )
         if (!valid) {
-          setEmailHelper('Invalid Email');
+          setEmailHelper("Invalid Email")
         } else {
-          setEmailHelper('');
+          setEmailHelper("")
         }
-        break;
+        break
 
-      case 'phone':
-        setPhone(e.target.value);
+      case "phone":
+        setPhone(e.target.value)
         valid = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/.test(
           e.target.value,
-        );
+        )
         if (!valid) {
-          setPhoneHelper('Invalid Phone');
+          setPhoneHelper("Invalid Phone")
         } else {
-          setPhoneHelper('');
+          setPhoneHelper("")
         }
-        break;
+        break
       default:
-        break;
+        break
     }
-  };
+  }
 
   return (
-    <Grid container direction='row'>
+    <Grid container direction="row">
       <Grid
         item
         container
-        style={{ marginLeft: '5em', marginBottom: '4em', marginTop: '4em' }}
-        direction='column'
-        justify='center'
+        style={{ marginBottom: "4em", marginTop: "4em" }}
+        direction="column"
+        justify="center"
+        alignItems="center"
       >
         <Grid item>
-          <Typography variant='h2' style={{ lineHeight: 1 }}>
+          <Typography variant="h2" style={{ lineHeight: 1 }}>
             Contact Us
           </Typography>
           <Typography
-            variant='body1'
+            variant="body1"
             style={{ color: theme.palette.common.blue }}
           >
             We're waiting...
           </Typography>
         </Grid>
-        <Grid item container>
+        <Grid justify="center" alignItems="center" item container>
           <Grid item>
             <img
               src={phoneIcon}
-              alt='Phone'
-              style={{ marginRight: '0.5rem' }}
+              alt="Phone"
+              style={{ marginRight: "0.5rem" }}
             />
           </Grid>
           <Grid item>
             <Typography
-              variant='body1'
-              style={{ color: theme.palette.common.blue, fontSize: '1rem' }}
+              variant="body1"
+              style={{ color: theme.palette.common.blue, fontSize: "1rem" }}
             >
               +1-555-444-555
             </Typography>
           </Grid>
         </Grid>
-        <Grid item container>
+        <Grid item justify="center" alignItems="center" container>
           <Grid item>
             <img
               src={emailIcon}
-              alt='Envelope'
-              style={{ marginRight: '0.5em', verticalAlign: 'bottom' }}
+              alt="Envelope"
+              style={{ marginRight: "0.5em", verticalAlign: "bottom" }}
             />
           </Grid>
           <Grid item>
             <Typography
-              variant='body1'
-              style={{ color: theme.palette.common.blue, fontSize: '1rem' }}
+              variant="body1"
+              style={{ color: theme.palette.common.blue, fontSize: "1rem" }}
             >
               jdoe@gmail.com
             </Typography>
           </Grid>
         </Grid>
-        <Grid item container direction='column' style={{ maxWidth: '20em' }}>
+        <Grid item container direction="column" style={{ maxWidth: "20em" }}>
           <Grid item>
             <TextField
-              label='Name'
-              id='name'
+              label="Name"
+              id="name"
               fullWidth
               value={name}
               onChange={(e) => setName(e.target.value)}
@@ -145,10 +145,10 @@ const ContactUs = () => {
           </Grid>
           <Grid item>
             <TextField
-              label='Email'
+              label="Email"
               helperText={emailHelper}
               error={emailHelper.length !== 0}
-              id='email'
+              id="email"
               fullWidth
               value={email}
               onChange={onChange}
@@ -156,22 +156,22 @@ const ContactUs = () => {
           </Grid>
           <Grid item>
             <TextField
-              label='Phone'
+              label="Phone"
               helperText={phoneHelper}
               error={phoneHelper.length !== 0}
-              id='phone'
+              id="phone"
               fullWidth
               value={phone}
               onChange={onChange}
             />
           </Grid>
         </Grid>
-        <Grid item style={{ maxWidth: '20em' }}>
+        <Grid item style={{ maxWidth: "20em" }}>
           <TextField
             InputProps={{ disableUnderline: true }}
             value={message}
             className={classes.message}
-            id='message'
+            id="message"
             multiline
             fullWidth
             rows={10}
@@ -179,19 +179,19 @@ const ContactUs = () => {
             onChange={(e) => setMessage(e.target.value)}
           />
         </Grid>
-        <Grid item style={{ marginTop: '2em' }}>
-          <Button variant='contained' className={classes.send}>
+        <Grid item style={{ marginTop: "2em" }}>
+          <Button variant="contained" className={classes.send}>
             Send Message
             <img
               src={airplane}
-              style={{ marginLeft: '1em' }}
-              alt='paper airplane'
+              style={{ marginLeft: "1em" }}
+              alt="paper airplane"
             />
           </Button>
         </Grid>
       </Grid>
     </Grid>
-  );
-};
+  )
+}
 
-export default ContactUs;
+export default ContactUs

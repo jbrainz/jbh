@@ -1,75 +1,75 @@
-import React, { Fragment } from 'react';
-import { Link } from 'react-router-dom';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
-import Button from '@material-ui/core/Button';
-import ButtonArrow from '../layouts/Custom/ButtonArrow';
-import Typography from '@material-ui/core/Typography';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
+import React, { Fragment } from "react"
+import { Link } from "react-router-dom"
+import { makeStyles, useTheme } from "@material-ui/core/styles"
+import Grid from "@material-ui/core/Grid"
+import Button from "@material-ui/core/Button"
+import ButtonArrow from "../layouts/Custom/ButtonArrow"
+import Typography from "@material-ui/core/Typography"
+import useMediaQuery from "@material-ui/core/useMediaQuery"
 
 //svg imports
-import price_new from '../../svg_files/price_new.svg';
-import free_time from '../../svg_files/free_time.svg';
-import safe from '../../svg_files/safe.png';
+import price_new from "../../svg_files/price_new.svg"
+import free_time from "../../svg_files/free_time.svg"
+import safe from "../../svg_files/safe.png"
 
 const useStyles = makeStyles((theme) => ({
   time: {
-    width: '15em',
-    height: '15em',
-    marginLeft: '2em',
-    [theme.breakpoints.down('xs')]: {
+    width: "15em",
+    height: "15em",
+    marginLeft: "2em",
+    [theme.breakpoints.down("xs")]: {
       marginLeft: 0,
-      width: '10em',
-      height: '10em',
+      width: "10em",
+      height: "10em",
     },
   },
   specialText: {
-    fontFamily: 'Pacifico',
+    fontFamily: "Pacifico",
     color: theme.palette.common.orange,
-    fontWeight: '300',
+    fontWeight: "300",
   },
   learnMore: {
     ...theme.typography.learnButton,
-    fontSize: '0.7rem',
+    fontSize: "0.7rem",
     height: 35,
     padding: 5,
-    [theme.breakpoints.down('sm')]: {
-      marginTop: '2em',
-      marginBottom: '2em',
+    [theme.breakpoints.down("sm")]: {
+      marginTop: "2em",
+      marginBottom: "2em",
     },
   },
   subtitle: {
-    marginBottom: '1em',
+    marginBottom: "1em",
   },
   serviceBlock: {
-    marginTop: '6em',
-    marginBottom: '5em',
-    [theme.breakpoints.down('sm')]: {
+    marginTop: "6em",
+    marginBottom: "5em",
+    [theme.breakpoints.down("sm")]: {
       padding: 25,
-      marginTop: '3em',
+      marginTop: "3em",
     },
   },
-}));
+}))
 
 const Services = (props) => {
-  const { setValue, setSelectedIndex } = props;
-  const classes = useStyles();
-  const theme = useTheme();
-  const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));
+  const { setValue, setSelectedIndex } = props
+  const classes = useStyles()
+  const theme = useTheme()
+  const matchesSM = useMediaQuery(theme.breakpoints.down("sm"))
   return (
     <Fragment>
       <Grid item>
         <Grid
           container
           direction="row"
-          justify={matchesSM ? 'center' : undefined}
+          justify={matchesSM ? "center" : undefined}
           className={classes.serviceBlock}
         >
           <Grid
             item
             style={{
-              marginLeft: matchesSM ? 0 : '5em',
-              textAlign: matchesSM ? 'center' : undefined,
+              marginLeft: matchesSM ? 0 : "5em",
+              textAlign: matchesSM ? "center" : undefined,
             }}
           >
             <Typography variant="h4">Best Price Guarantee</Typography>
@@ -77,7 +77,7 @@ const Services = (props) => {
               We return the difference in price
             </Typography>
             <Typography variant="subtitle1">
-              We provide rides, without any extra hidden{' '}
+              We provide rides, without any extra hidden{" "}
               <span className={classes.specialText}>charges.</span>
             </Typography>
             <Button
@@ -109,13 +109,13 @@ const Services = (props) => {
         <Grid
           container
           direction="row"
-          justify={matchesSM ? 'center' : 'flex-end'}
+          justify={matchesSM ? "center" : "flex-end"}
           className={classes.serviceBlock}
         >
           <Grid
             item
             style={{
-              textAlign: matchesSM ? 'center' : undefined,
+              textAlign: matchesSM ? "center" : undefined,
             }}
           >
             <Typography variant="h4">Free Waiting Time</Typography>
@@ -123,15 +123,13 @@ const Services = (props) => {
               We allow 60 minutes of waiting time at airports
             </Typography>
             <Typography variant="subtitle1">
-              All other locations includes a free 15 minutes{' '}
+              All other locations includes a free 15 minutes{" "}
               <span className={classes.specialText}> waiting time.</span>
             </Typography>
             <Button
               component={Link}
               to="/book"
-              onClick={() => {
-                setValue(5);
-              }}
+              onClick={() => setValue(5)}
               variant="outlined"
               className={classes.learnMore}
             >
@@ -143,7 +141,7 @@ const Services = (props) => {
               />
             </Button>
           </Grid>
-          <Grid item style={{ marginRight: matchesSM ? 0 : '5em' }}>
+          <Grid item style={{ marginRight: matchesSM ? 0 : "5em" }}>
             <img
               alt="free time waiting"
               src={free_time}
@@ -156,14 +154,14 @@ const Services = (props) => {
         <Grid
           container
           direction="row"
-          justify={matchesSM ? 'center' : undefined}
+          justify={matchesSM ? "center" : undefined}
           className={classes.serviceBlock}
         >
           <Grid
             item
             style={{
-              marginLeft: matchesSM ? 0 : '5em',
-              textAlign: matchesSM ? 'center' : undefined,
+              marginLeft: matchesSM ? 0 : "5em",
+              textAlign: matchesSM ? "center" : undefined,
             }}
           >
             <Typography variant="h4">Safe Rides and Transfer</Typography>
@@ -171,14 +169,13 @@ const Services = (props) => {
               You will always know your carrier,
             </Typography>
             <Typography variant="subtitle1">
-              all carriers are carefully{' '}
+              all carriers are carefully{" "}
               <span className={classes.specialText}> selected</span>
             </Typography>
             <Button
               component={Link}
               to="/book"
               onClick={() => setValue(5)}
-              variant="outlined"
               variant="outlined"
               className={classes.learnMore}
             >
@@ -196,7 +193,7 @@ const Services = (props) => {
         </Grid>
       </Grid>
     </Fragment>
-  );
-};
+  )
+}
 
-export default Services;
+export default Services
