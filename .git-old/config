@@ -1,0 +1,14 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "caterfoods"]
+	url = https://github.com/jbrainz/caterfoods.git
+	fetch = +refs/heads/*:refs/remotes/caterfoods/*
+[remote "cater"]
+	url = https://github.com/jbrainz/caterfoods.git
+	fetch = +refs/heads/*:refs/remotes/cater/*
+[remote "ct"]
+	url = https://github.com/jbrainz/caterfoods.git
+	fetch = +refs/heads/*:refs/remotes/ct/*
