@@ -38,6 +38,23 @@ const useStyles = makeStyles((theme) => ({
     },
     borderRadius: 25,
   },
+  next: {
+    fontWeight: "600",
+    color: "#03071e",
+    lineHeight: "126.64px",
+    fontFamily: "Pacifico",
+    fontSize: "3em",
+    opacity: 0.8,
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "2em",
+    },
+  },
+  menu: {
+    ontWeight: "800",
+    color: "#1d3557",
+    fontFamily: "Gentona",
+    fontSize: "2.4em",
+  },
 }))
 const datas = {
   property: [
@@ -218,6 +235,23 @@ const SlideMenu = () => {
           </Grid>
         </div>
       </div>
+      <Grid
+        container
+        justify={!matchesSM ? "center" : "flex-start"}
+        align="center"
+        style={{
+          marginTop: matchesSM ? "40em" : "10em",
+          background: !matchesSM
+            ? "linear-gradient(45deg, #fff  30%, #D96262 100%)"
+            : "",
+          marginLeft: "5em",
+        }}
+      >
+        <Grid item>
+          <Typography className={classes.next}>More Dishes</Typography>
+          <Typography className={classes.menu}>From Our Menu</Typography>
+        </Grid>
+      </Grid>
     </>
   )
 }

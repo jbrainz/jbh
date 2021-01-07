@@ -29,17 +29,14 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("xs")]: {
       backgroundColor: "#fff",
       backgroundImage: "none",
-      position: "absolute",
-      top: "100em",
+      marginTop: "100em",
     },
     backgroundImage: `url(${banner})`,
     clipPath: " polygon( 10% 0, 100% 0,100% 100% ,25% 98% )",
     opacity: 0.9,
     backgroundSize: "cover",
-    position: "absolute",
-    top: "120em",
+    marginTop: "120em",
     backgroundRepeat: "no-repeat",
-    marginTop: "5em",
   },
   heroTextContainer: {
     backgroundColor: "#fff",
@@ -54,11 +51,12 @@ const useStyles = makeStyles((theme) => ({
       width: "80%",
       marginBottom: "5em",
       marginRight: 0,
+      boxShadow: "none",
     },
   },
   imageIcon: { height: "3em", width: "4em" },
 }))
-const Foods = () => {
+const WhyUs = () => {
   const classes = useStyles()
   const theme = useTheme()
   const matchesSM = useMediaQuery(theme.breakpoints.down("xs"))
@@ -166,4 +164,4 @@ const Foods = () => {
   )
 }
 
-export default Foods
+export default WhyUs

@@ -1,12 +1,12 @@
 import React from "react"
-import Foods from "./Foods"
+import WhyUs from "./WhyUs"
 import SlideMenu from "./SlideMenu"
 
 const LandingPage = () => {
   return (
     <>
       <SlideMenu />
-      <Foods />
+      <WhyUs />
     </>
   )
 }
