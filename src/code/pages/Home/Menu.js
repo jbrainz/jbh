@@ -10,12 +10,18 @@ import {
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: "315px",
+    maxWidth: "355px",
+    [theme.breakpoints.down("xs")]: {
+      maxWidth: "316px",
+      height: "25rem",
+    },
     boxShadow: "3px 3px 5px 6px #ccc",
     elevation: 4,
     borderRadius: 15,
     backgroundColor: "#fca311",
     opacity: 0.8,
+    height: "28rem",
+    width: "32rem",
   },
   media: {
     height: 0,
@@ -36,8 +42,9 @@ const MenuSlider = ({ title, sub, src, imgtitle, body }) => {
       style={{
         marginTop: 40,
         marginBottom: 40,
-        marginLeft: "30px",
+        marginLeft: "10px",
         minWidth: "315px",
+        marginRight: "60px",
       }}
     >
       <Card className={classes.root}>

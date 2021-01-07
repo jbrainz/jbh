@@ -3,7 +3,7 @@ import { ThemeProvider } from "@material-ui/styles"
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 import theme from "./code/Components/Theme"
 import { AppProvider } from "./code/Components/context/ContextState"
-import LandingPage from "./code/pages/Home/LandingPage"
+import { LandingPage } from "./code/pages/Home"
 
 function App() {
   return (

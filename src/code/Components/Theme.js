@@ -51,10 +51,18 @@ export default createMuiTheme({
     },
     h5: {
       fontFamily: "Raleway",
+      fontSize: "1.8rem",
+      color: black,
+      lineHeight: "27px",
+      fontWeight: "400",
+    },
+    h6: {
+      fontFamily: "Pacifico",
       fontSize: "2rem",
       color: black,
       lineHeight: "29.9px",
-      fontWeight: "400",
+      fontWeight: "300",
+      opacity: 0.7,
     },
     h3: {
       fontFamily: "Raleway",
@@ -66,14 +74,14 @@ export default createMuiTheme({
     h4: {
       fontFamily: "Raleway",
       fontSize: "1.75rem",
-      color: white,
+      color: black,
       fontWeight: "700",
       lineHeight: "50px",
     },
     subtitle1: {
       fontSize: "1.25rem",
       fontWeight: "300",
-      color: `${black}`,
+      color: black,
     },
     learnButton: {
       borderColor: black,
@@ -86,14 +94,14 @@ export default createMuiTheme({
     },
     body2: {
       fontSize: "16px",
-      fontWeight: "300",
+      fontWeight: "600",
       fontFamily: "Gentona",
       color: "#00000099",
       lineHeight: "24px",
       minHeight: "150px",
     },
     body1: {
-      fontSize: "1.2rem",
+      fontSize: "1rem",
       color: "#000000",
       fontWeight: "300",
       fontFamily: "Gentona",
