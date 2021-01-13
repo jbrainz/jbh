@@ -74,14 +74,15 @@ export default createMuiTheme({
     h4: {
       fontFamily: "Raleway",
       fontSize: "1.75rem",
-      color: black,
+      color: white,
       fontWeight: "700",
       lineHeight: "50px",
     },
     subtitle1: {
-      fontSize: "1.25rem",
-      fontWeight: "300",
+      fontSize: "0.7rem",
+      fontWeight: "700",
       color: black,
+      fontFamily: "Roboto",
     },
     learnButton: {
       borderColor: black,
@@ -102,14 +103,18 @@ export default createMuiTheme({
     },
     body1: {
       fontSize: "1rem",
-      color: "#000000",
-      fontWeight: "300",
+      color: "#00000099",
+      fontWeight: "700",
       fontFamily: "Gentona",
     },
     subtitle2: {
+      backgroundColor: darkOrange,
+      borderRadius: 25,
       color: "#fff",
+      fontFamily: "Pacifico",
       fontSize: "1.25rem",
       fontWeight: "300",
+      padding: 5,
     },
   },
 })

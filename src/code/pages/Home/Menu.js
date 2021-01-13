@@ -11,9 +11,9 @@ import {
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: "355px",
-    [theme.breakpoints.down("xs")]: {
-      maxWidth: "316px",
-      height: "25rem",
+    [theme.breakpoints.down("sm")]: {
+      maxWidth: "200px",
+      height: "18rem",
     },
     boxShadow: "3px 3px 5px 6px #ccc",
     elevation: 4,
@@ -32,6 +32,15 @@ const useStyles = makeStyles((theme) => ({
       transform: "scale(1.4)",
     },
   },
+  disc: {
+    fontSize: "1rem",
+    color: "#00000099",
+    fontWeight: "700",
+    fontFamily: "Gentona",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "0.6rem",
+    },
+  },
 }))
 
 const MenuSlider = ({ title, sub, src, imgtitle, body }) => {
@@ -43,7 +52,7 @@ const MenuSlider = ({ title, sub, src, imgtitle, body }) => {
         marginTop: 40,
         marginBottom: 40,
         marginLeft: "10px",
-        minWidth: "315px",
+        minWidth: "200px",
         marginRight: "60px",
       }}
     >
@@ -51,7 +60,7 @@ const MenuSlider = ({ title, sub, src, imgtitle, body }) => {
         <CardHeader title={title} subheader={sub} />
         <CardMedia className={classes.media} image={src} title={imgtitle} />
         <CardContent style={{ marginBottom: 0 }}>
-          <Typography variant="body1" component="p">
+          <Typography className={classes.disc} component="p">
             {body}
           </Typography>
         </CardContent>

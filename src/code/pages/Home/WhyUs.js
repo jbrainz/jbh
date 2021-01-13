@@ -26,17 +26,18 @@ const useStyles = makeStyles((theme) => ({
   },
   mainContainer: {
     padding: 30,
-    [theme.breakpoints.down("xs")]: {
-      backgroundColor: "#fff",
-      backgroundImage: "none",
-      marginTop: "100em",
-    },
+
     backgroundImage: `url(${banner})`,
     clipPath: " polygon( 10% 0, 100% 0,100% 100% ,25% 98% )",
     opacity: 0.9,
     backgroundSize: "cover",
-    marginTop: "120em",
+    marginTop: "10em",
     backgroundRepeat: "no-repeat",
+    [theme.breakpoints.down("md")]: {
+      backgroundColor: "#fff",
+      backgroundImage: "none",
+      marginTop: "10em",
+    },
   },
   heroTextContainer: {
     backgroundColor: "#fff",
@@ -44,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
     height: "20em",
     width: "20em",
     boxShadow: "3px 3px 5px 4px #003",
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down("md")]: {
       marginLeft: 0,
       minWidth: "15em",
       height: "15em",

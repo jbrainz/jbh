@@ -134,7 +134,6 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "white",
   },
   root: {
-    backgroundImage: `url(${background})`,
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
     width: "100%",
@@ -178,7 +177,7 @@ function ElevationScroll(props) {
     elevation: trigger ? 4 : 0,
   })
 }
-const Header = () => {
+const Header = ({ back }) => {
   const { selectedIndex, setSelectedIndex, value, setValue } = useContext(
     AppContext,
   )
@@ -321,7 +320,7 @@ const Header = () => {
 
   return (
     <Fragment>
-      <div className={classes.root}>
+      <div className={classes.root} style={{ backgroundImage: `url(${back})` }}>
         <ElevationScroll>
           <AppBar position="fixed" className={classes.appbar}>
             <Toolbar disableGutters>
@@ -345,11 +344,11 @@ const Header = () => {
           className={classes.heroText}
         >
           <Typography align="left">
-            <Typography variant={matchesSM ? "h4" : "h1"}>
-              Nepalese Restaurant
+            <Typography variant={matches ? "h4" : "h1"}>
+              CaterFoods Restaurant
             </Typography>
-            <Typography variant={matchesSM ? "h4" : "h1"}>
-              Oringinal Cousine
+            <Typography variant={matches ? "h4" : "h1"}>
+              Nigerian Taste
             </Typography>
           </Typography>
         </Grid>

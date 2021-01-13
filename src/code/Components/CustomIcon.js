@@ -1,10 +1,10 @@
-const CustomIcon = (props) => {
+const CustomIcon = ({ src, height, width }) => {
   return (
     <img
       style={{ height: undefined, width: undefined }}
-      src={props.src}
-      height={props.height}
-      width={props.width}
+      src={src}
+      height={height}
+      width={width}
       alt="order"
     />
   )

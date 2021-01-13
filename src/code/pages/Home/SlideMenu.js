@@ -8,6 +8,7 @@ import {
 } from "@material-ui/core"
 import MenuSlider from "./Menu"
 import { useTheme } from "@material-ui/styles"
+import MenuItem from "../Menu/MenuItem"
 
 import friedRice from "../assets/foods/friedrice.jpg"
 import efoRiro from "../assets/foods/vegetable.jpg"
@@ -18,6 +19,17 @@ import whiteRice from "../assets/foods/whiterice.jpg"
 import arrowR from "../assets/icons/iconR.png"
 import arrowL from "../assets/icons/iconL.png"
 import menu from "../assets/icons/menu.png"
+import backgroundImg from "../assets/banners/ban3.jpg"
+
+import akara from "../data/assets/foodIamges/akara.jpeg"
+import moimoi from "../data/assets/foodIamges/moimoi.jpeg"
+import yamEgg from "../data/assets/foodIamges/yameggsauce.jpg"
+import cocnoutrice from "../data/assets/foodIamges/coconut rice.jpeg"
+import yammeal from "../data/assets/foodIamges/Yam pottage with assorted meat.jpg"
+import eforiro from "../data/assets/foodIamges/Efo riro.jpg"
+import bangasoup from "../data/assets/foodIamges/bangasoup.jpeg"
+import beansbread from "../data/assets/foodIamges/beans and bread.jpeg"
+import yamarita from "../data/assets/foodIamges/yamarita.jpeg"
 
 import CustomIcon from "../../Components/CustomIcon"
 
@@ -33,8 +45,8 @@ const useStyles = makeStyles((theme) => ({
     position: "absolute",
     right: 120,
     marginTop: 70,
-    [theme.breakpoints.down("xs")]: {
-      marginTop: 650,
+    [theme.breakpoints.down("sm")]: {
+      marginTop: 500,
     },
     borderRadius: 25,
   },
@@ -45,17 +57,21 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "Pacifico",
     fontSize: "3em",
     opacity: 0.8,
-    [theme.breakpoints.down("xs")]: {
-      fontSize: "2em",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "1.5em",
     },
   },
   menu: {
-    ontWeight: "800",
+    fontWeight: "800",
     color: "#1d3557",
     fontFamily: "Gentona",
     fontSize: "2.4em",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "1em",
+    },
   },
 }))
+
 const datas = {
   property: [
     {
@@ -124,6 +140,91 @@ const datas = {
     },
   ],
 }
+const menuData = [
+  {
+    index: 0,
+    title: "Akara",
+    disc: "fried cake or fritter, is a common breakfast staple or fast food.",
+    src: akara,
+  },
+  {
+    index: 1,
+    title: "Moi Moi",
+    disc: `Moi Moi is a Nigerian steamed beans 
+      pudding which has its origin in South West Nigeria.`,
+    src: moimoi,
+  },
+  {
+    index: 3,
+    title: "Yam and egg sauce",
+    disc: `Boiled or fried yam and egg sauce is a usual suspect on the table of Nigerians.`,
+    src: yamEgg,
+  },
+  {
+    index: 5,
+    title: "Fried Rice",
+    disc: `This colourful delicacy is food to many West African Countries, 
+    not just Nigeria.`,
+    src: friedRice,
+    imgtitle: "rice",
+  },
+  {
+    index: 6,
+    title: "coconout Rice",
+    disc: `Delicious coconout flavored rice, garnished with spices.`,
+    src: cocnoutrice,
+    imgtitle: "rice",
+  },
+  {
+    index: 7,
+    title: "Yamaritta",
+    disc: `Yamarita (also known as “Dundun Oniyeri”. Made from flour coated boiled Yam.`,
+    src: yamarita,
+    imgtitle: "yam",
+  },
+  {
+    index: 7,
+    title: "Yam pottage",
+    disc: `Yam with vegetables and and meat or boiled fish, soft and smoothe`,
+    src: yammeal,
+    imgtitle: "yam-pottage",
+  },
+  {
+    index: 8,
+    title: "Efo Riro",
+    disc: `stirred leafy vegetable, garnished with fish and meats, and some spices`,
+    src: eforiro,
+    imgtitle: "Efo riro",
+  },
+  {
+    index: 9,
+    title: "Banga",
+    disc: `Palm nut soup, it’s a Delta/Urhobo (Ngerian south) favourite`,
+    src: bangasoup,
+    imgtitle: "banga",
+  },
+  {
+    index: 10,
+    title: "Afang",
+    disc: ` It is also very nutritious as the soup consists mainly of vegetables`,
+    src: afang,
+    imgtitle: "afang",
+  },
+  {
+    index: 11,
+    title: "Okra",
+    disc: ` Just like ogbono soup and Ewedu soup, Okro soup has a viscous texture which makes it an acquired taste.`,
+    src: okra,
+    imgtitle: "okra",
+  },
+  {
+    index: 12,
+    title: "Ewa agoyin",
+    disc: ` Ewa Aganyin is made up of cooked beans and pepper sauce.`,
+    src: beansbread,
+    imgtitle: "okra",
+  },
+]
 const SlideMenu = () => {
   const classes = useStyles()
   const theme = useTheme()
@@ -154,10 +255,10 @@ const SlideMenu = () => {
     setTouchEnd(e.targetTouches[0].clientX)
   }
   function handleTouchEnd() {
-    if (touchStart - touchEnd > 170) {
+    if (touchStart - touchEnd > 180) {
       nextData()
     }
-    if (touchStart - touchEnd < -150) {
+    if (touchStart - touchEnd < -180) {
       prevData()
     }
   }
@@ -242,7 +343,7 @@ const SlideMenu = () => {
         style={{
           marginTop: matchesSM ? "40em" : "10em",
           background: !matchesSM
-            ? "linear-gradient(45deg, #fff  30%, #D96262 100%)"
+            ? "linear-gradient(45deg, #fff  30%, #ccc 100%)"
             : "",
           marginLeft: "5em",
         }}
@@ -251,6 +352,39 @@ const SlideMenu = () => {
           <Typography className={classes.next}>More Dishes</Typography>
           <Typography className={classes.menu}>From Our Menu</Typography>
         </Grid>
+      </Grid>
+      <Grid
+        container
+        direction="row"
+        justify="space-around"
+        style={{
+          marginTop: "2em",
+          backgroundImage: !matchesSM ? `url(${backgroundImg})` : undefined,
+        }}
+      >
+        {menuData.map(({ index, src, title, disc, imgtitle }) => (
+          <MenuItem
+            key={index}
+            src={src}
+            alt={imgtitle}
+            disc={disc}
+            title={title}
+          />
+        ))}
+      </Grid>
+      <Grid
+        container
+        justify="center"
+        align="center"
+        style={{ marginTop: matchesSM ? "1em" : "3em" }}
+      >
+        <Button
+          variant="contained"
+          color="secondary"
+          style={{ borderRadius: 20, height: 50, width: "15em" }}
+        >
+          View Our menu
+        </Button>
       </Grid>
     </>
   )
