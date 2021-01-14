@@ -16,13 +16,12 @@ import {
   Typography,
   Grid,
 } from "@material-ui/core"
-import { Link } from "react-router-dom"
+import { Link, useHistory } from "react-router-dom"
 import { useTheme } from "@material-ui/styles"
 import MenuIcons from "@material-ui/icons/Menu"
 import Theme from "../Components/Theme"
 
 import logo from "../assets/img/logo.png"
-import background from "../assets/img/background.jpg"
 import cart from "../assets/img/order.png"
 import reserve from "../assets/img/reservation.png"
 
@@ -72,7 +71,7 @@ const useStyles = makeStyles((theme) => ({
     width: 230,
     "&:hover": {
       color: "#fff",
-      backgroundColor: theme.palette.common.green,
+      backgroundColor: "#fca311",
     },
   },
   logoContainer: {
@@ -120,7 +119,7 @@ const useStyles = makeStyles((theme) => ({
   },
   bookList: {
     backgroundColor: theme.palette.secondary.main,
-    "&:hover": { backgroundColor: "#2A9E00" },
+    "&:hover": { backgroundColor: "#fca311" },
     color: "#fff",
   },
   drawerItemSelected: {
@@ -139,7 +138,10 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     height: "100%",
     backgroundPosition: "center",
-    minHeight: "100vh",
+    minHeight: "70vh",
+    [theme.breakpoints.down("sm")]: {
+      minHeight: "40vh",
+    },
   },
   heroText: {
     marginTop: "10em",
@@ -156,13 +158,17 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: 288,
     height: 45,
     width: 180,
+    marginButtom: "3em",
     "&:hover": {
       color: theme.palette.common.white,
       backgroundColor: theme.palette.secondary.sub,
     },
   },
   buttonContainer: {
-    marginTop: 50,
+    marginTop: 30,
+    [theme.breakpoints.down("xs")]: {
+      marginButtom: "3em",
+    },
   },
 }))
 
@@ -177,7 +183,8 @@ function ElevationScroll(props) {
     elevation: trigger ? 4 : 0,
   })
 }
-const Header = ({ back }) => {
+const Header = ({ back, button, header }) => {
+  const history = useHistory()
   const { selectedIndex, setSelectedIndex, value, setValue } = useContext(
     AppContext,
   )
@@ -185,6 +192,7 @@ const Header = ({ back }) => {
   const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent)
   const matches = useMediaQuery(theme.breakpoints.down("md"))
   const matchesSM = useMediaQuery(theme.breakpoints.down("xs"))
+  const matchesS = useMediaQuery(theme.breakpoints.down("sm"))
 
   const [openDrawer, setOpenDrawer] = useState(false)
   const classes = useStyles()
@@ -248,11 +256,12 @@ const Header = ({ back }) => {
         }}
       >
         <Button
-          to="/order"
+          to="/menu"
           variant="contained"
           color="primary"
           className={classes.button}
           startIcon={<CustomIcon src={cart} />}
+          onClick={() => history.push("/menu")}
         >
           Order Online
         </Button>
@@ -347,9 +356,7 @@ const Header = ({ back }) => {
             <Typography variant={matches ? "h4" : "h1"}>
               CaterFoods Restaurant
             </Typography>
-            <Typography variant={matches ? "h4" : "h1"}>
-              Nigerian Taste
-            </Typography>
+            <Typography variant={matches ? "h4" : "h1"}>{header}</Typography>
           </Typography>
         </Grid>
         <Grid
@@ -359,14 +366,16 @@ const Header = ({ back }) => {
           alignItems="center"
           className={classes.buttonContainer}
         >
-          <Button
-            to="/order"
-            variant="contained"
-            className={classes.buttonR}
-            startIcon={<CustomIcon src={reserve} height={35} />}
-          >
-            RESERVATION
-          </Button>
+          {!matchesS && button ? (
+            <Button
+              to="/order"
+              variant="contained"
+              className={classes.buttonR}
+              startIcon={<CustomIcon src={reserve} height={35} />}
+            >
+              RESERVATION
+            </Button>
+          ) : null}
         </Grid>
       </div>
     </Fragment>

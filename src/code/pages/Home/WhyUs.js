@@ -19,14 +19,13 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "400",
     lineHeight: "82px",
     opacity: 1,
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down("md")]: {
       color: "#F25041",
       fontSize: "28px",
     },
   },
   mainContainer: {
     padding: 30,
-
     backgroundImage: `url(${banner})`,
     clipPath: " polygon( 10% 0, 100% 0,100% 100% ,25% 98% )",
     opacity: 0.9,
@@ -49,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
       marginLeft: 0,
       minWidth: "15em",
       height: "15em",
-      width: "80%",
+      width: "10em",
       marginBottom: "5em",
       marginRight: 0,
       boxShadow: "none",

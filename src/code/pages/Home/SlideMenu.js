@@ -9,6 +9,7 @@ import {
 import MenuSlider from "./Menu"
 import { useTheme } from "@material-ui/styles"
 import MenuItem from "../Menu/MenuItem"
+import { useHistory } from "react-router-dom"
 
 import friedRice from "../assets/foods/friedrice.jpg"
 import efoRiro from "../assets/foods/vegetable.jpg"
@@ -226,6 +227,7 @@ const menuData = [
   },
 ]
 const SlideMenu = () => {
+  const history = useHistory()
   const classes = useStyles()
   const theme = useTheme()
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"))
@@ -283,6 +285,7 @@ const SlideMenu = () => {
               color="secondary"
               startIcon={<CustomIcon src={menu} height={25} />}
               style={{ borderRadius: 10 }}
+              onClick={() => history.push("/menu")}
             >
               View Our menu
             </Button>
@@ -382,6 +385,7 @@ const SlideMenu = () => {
           variant="contained"
           color="secondary"
           style={{ borderRadius: 20, height: 50, width: "15em" }}
+          onClick={() => history.push("/menu")}
         >
           View Our menu
         </Button>

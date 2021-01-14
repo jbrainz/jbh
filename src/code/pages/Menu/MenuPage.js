@@ -8,7 +8,7 @@ const menu = menus
 const MenuPage = () => {
   return (
     <>
-      <Header back={imgBack} />
+      <Header header="Our Menu" button={false} back={imgBack} />
       <div>
         {menu.map((data) => (
           <Menu

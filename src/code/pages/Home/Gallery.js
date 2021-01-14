@@ -9,11 +9,10 @@ const useStyles = makeStyles((theme) => ({
     marginRight: "10em",
     marginTop: "20em",
     backgroundImage: `url(${backImg})`,
-    [theme.breakpoints.down("xs")]: {
-      marginRight: 0,
-    },
+
     [theme.breakpoints.down("md")]: {
       marginRight: 0,
+      marginTop: "4em",
     },
   },
   gridList: {
@@ -105,7 +104,11 @@ const Gallery = ({ tileData, header, direction }) => {
             container
             alignItems="center"
             justify="center"
-            style={{ width: !matchesMD ? "40%" : "80%", marginLeft: "2em" }}
+            style={{
+              width: !matchesMD ? "40%" : "80%",
+              marginLeft: "2em",
+              marginTop: matchesMD ? "3em" : 0,
+            }}
           >
             {tileData.map(({ img, title, author }) => (
               <Grid

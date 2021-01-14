@@ -1,4 +1,5 @@
 import React, { createContext, useState } from "react"
+import { useHistory } from "react-router-dom"
 
 export const AppContext = createContext()
 
@@ -20,7 +21,6 @@ export const AppProvider = ({ children }) => {
         open,
         handleClickOpen: () => {
           setOpen(true)
-          console.log("pressed!")
         },
         handleClose: () => {
           setOpen(false)

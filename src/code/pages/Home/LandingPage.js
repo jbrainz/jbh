@@ -11,7 +11,7 @@ const datas = tileData.meatData
 const LandingPage = () => {
   return (
     <>
-      <Header back={imgback} />
+      <Header header="Taste Like Home" button={true} back={imgback} />
       <SlideMenu />
       <WhyUs />
       <Gallery

@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
 import { Link } from "react-router-dom"
-import { makeStyles, Grid, Typography, Button } from "@material-ui/core"
+import { makeStyles, Grid, Typography, Button, Hidden } from "@material-ui/core"
 import { AppContext } from "../Components/context/ContextState"
 
 import insta from "../assets/icons/instagram.png"
@@ -39,11 +39,12 @@ const useStyles = makeStyles((theme) => ({
   },
   socialContainer: {
     position: "absolute",
-    marginTop: "3em",
+    marginTop: "5em",
     right: "2em",
     [theme.breakpoints.down("sm")]: {
-      right: "0.8em",
-      marginTop: "15em",
+      right: "1.2em",
+      marginTop: "2em",
+      background: "linear-gradient(45deg, #ffbe0b  30%, #ff7b00 100%)",
     },
   },
 }))
@@ -53,91 +54,93 @@ const Footer = () => {
   return (
     <footer className={classes.footer}>
       <Grid container justify="center" className={classes.mainContainer}>
-        <Grid item style={{ margin: "3em" }}>
-          <Grid container direction="column" spacing={1}>
-            <Grid
-              item
-              component={Link}
-              onClick={() => {
-                setValue(0)
-              }}
-              to="/"
-              className={classes.link}
-            >
-              Home
+        <Hidden smDown>
+          <Grid item style={{ margin: "3em" }}>
+            <Grid container direction="column" spacing={1}>
+              <Grid
+                item
+                component={Link}
+                onClick={() => {
+                  setValue(0)
+                }}
+                to="/"
+                className={classes.link}
+              >
+                Home
+              </Grid>
             </Grid>
           </Grid>
-        </Grid>
-        <Grid item style={{ margin: "3em" }}>
-          <Grid container direction="column" spacing={4}>
-            <Grid
-              item
-              component={Link}
-              onClick={() => {
-                setValue(1)
-                setSelectedIndex(0)
-              }}
-              to="/menu"
-              className={classes.link}
-            >
-              Menu
-            </Grid>
-            <Grid
-              item
-              component={Link}
-              onClick={() => {
-                setValue(1)
-                setSelectedIndex(1)
-              }}
-              to="/order"
-              className={classes.link}
-            >
-              Order Now
-            </Grid>
-            <Grid
-              item
-              component={Link}
-              onClick={() => {
-                setValue(1)
-                setSelectedIndex(2)
-              }}
-              to="/about"
-              className={classes.link}
-            >
-              About Us
-            </Grid>
-          </Grid>
-        </Grid>
-        <Grid item style={{ margin: "3em" }}>
-          <Grid container direction="column" spacing={2}>
-            <Grid
-              item
-              component={Link}
-              onClick={() => {
-                setValue(3)
-              }}
-              to="/contact"
-              className={classes.link}
-            >
-              Contact Us
+          <Grid item style={{ margin: "3em" }}>
+            <Grid container direction="column" spacing={4}>
+              <Grid
+                item
+                component={Link}
+                onClick={() => {
+                  setValue(1)
+                  setSelectedIndex(0)
+                }}
+                to="/menu"
+                className={classes.link}
+              >
+                Menu
+              </Grid>
+              <Grid
+                item
+                component={Link}
+                onClick={() => {
+                  setValue(1)
+                  setSelectedIndex(1)
+                }}
+                to="/order"
+                className={classes.link}
+              >
+                Order Now
+              </Grid>
+              <Grid
+                item
+                component={Link}
+                onClick={() => {
+                  setValue(1)
+                  setSelectedIndex(2)
+                }}
+                to="/about"
+                className={classes.link}
+              >
+                About Us
+              </Grid>
             </Grid>
           </Grid>
-        </Grid>
-        <Grid item style={{ margin: "3em" }}>
-          <Grid container direction="column" spacing={2}>
-            <Grid
-              item
-              component={Link}
-              onClick={() => {
-                setValue(4)
-              }}
-              to="/reservation"
-              className={classes.link}
-            >
-              Book a table
+          <Grid item style={{ margin: "3em" }}>
+            <Grid container direction="column" spacing={2}>
+              <Grid
+                item
+                component={Link}
+                onClick={() => {
+                  setValue(3)
+                }}
+                to="/contact"
+                className={classes.link}
+              >
+                Contact Us
+              </Grid>
             </Grid>
           </Grid>
-        </Grid>
+          <Grid item style={{ margin: "3em" }}>
+            <Grid container direction="column" spacing={2}>
+              <Grid
+                item
+                component={Link}
+                onClick={() => {
+                  setValue(4)
+                }}
+                to="/reservation"
+                className={classes.link}
+              >
+                Book a table
+              </Grid>
+            </Grid>
+          </Grid>
+        </Hidden>
       </Grid>
       <Grid
         container

@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useContext } from "react"
 import { withStyles } from "@material-ui/core/styles"
 import {
   Button,
@@ -257,13 +257,42 @@ const DialogActions = withStyles((theme) => ({
   },
 }))(MuiDialogActions)
 
-export default function CustomizedDialogs() {
-  const { open, handleClose, item } = React.useContext(AppContext)
-  const classes = useStyles()
-  const [age, setAge] = React.useState("")
+//REgex!
+const phoneRegex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im
+const emailRegex = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/
 
-  const handleChange = (event) => {
-    setAge(event.target.value)
+export default function CustomizedDialogs() {
+  const { open, handleClose, item } = useContext(AppContext)
+  const classes = useStyles()
+  const [details, setDetails] = useState({
+    email: "",
+    address: "",
+    phone: "",
+    disc: "",
+    select: "",
+  })
+  const [er, setEr] = useState(false)
+
+  const { email, address, phone, disc, select } = details
+  const onChange = (e) =>
+    setDetails({ ...details, [e.target.name]: e.target.value })
+
+  const showError = (
+    <Typography style={{ color: "red", marginLeft: "1em" }}>{er}</Typography>
+  )
+
+  const onSubmit = (e) => {
+    e.preventDefault()
+    setEr("")
+    if (email === "" || select === "" || phone === "" || address === "") {
+      setEr("All Fields Are Required!", "danger")
+    } else if (!emailRegex.test(email)) {
+      setEr("Invalid Email")
+    } else if (!phoneRegex.test(phone)) {
+      setEr("Invalid Phone")
+    } else {
+      console.log(email, address, phone, select)
+    }
   }
 
   return (
@@ -277,7 +306,7 @@ export default function CustomizedDialogs() {
         <DialogTitle id="form-dialog-title" onClose={handleClose}>
           Order
         </DialogTitle>
-
+        {showError}
         <DialogContent className={classes.content} dividers>
           <FormControl className={classes.formControl}>
             <Grid container justify="space-between" direction="column">
@@ -292,7 +321,10 @@ export default function CustomizedDialogs() {
                     variant="outlined"
                     id="outlined-basic"
                     required
+                    name="email"
                     label="Email"
+                    value={email}
+                    onChange={onChange}
                   />
                 </Grid>
                 <Grid item className={classes.inputs}>
@@ -301,6 +333,9 @@ export default function CustomizedDialogs() {
                     id="outlined-basic"
                     required
                     label="Phone"
+                    name="phone"
+                    value={phone}
+                    onChange={onChange}
                   />
                 </Grid>
                 <Grid item className={classes.inputs}>
@@ -308,7 +343,10 @@ export default function CustomizedDialogs() {
                     variant="outlined"
                     id="outlined-basic"
                     label="Address"
+                    name="address"
                     required
+                    value={address}
+                    onChange={onChange}
                   />
                 </Grid>
                 <Grid item className={classes.inputs}>
@@ -316,7 +354,10 @@ export default function CustomizedDialogs() {
                     variant="outlined"
                     multiline
                     id="outlined-basic"
+                    name="disc"
                     label="others please specify"
+                    value={disc}
+                    onChange={onChange}
                   />
                 </Grid>
               </Grid>
@@ -326,9 +367,10 @@ export default function CustomizedDialogs() {
                   <Select
                     labelId="demo-simple-select-filled-label"
                     id="demo-simple-select-filled"
-                    value={age}
+                    value={select}
+                    name="select"
                     className={classes.select}
-                    onChange={handleChange}
+                    onChange={onChange}
                   >
                     {menus
                       .filter((d) => d.type === item)
@@ -342,8 +384,16 @@ export default function CustomizedDialogs() {
           </FormControl>
         </DialogContent>
         <DialogActions>
-          <Button autoFocus onClick={handleClose} color="secondary">
-            Continue
+          <Button
+            variant="contained"
+            autoFocus
+            onClick={onSubmit}
+            color="secondary"
+          >
+            Pay Now ?
+          </Button>
+          <Button autoFocus onClick={onSubmit} color="secondary">
+            On Delivery
           </Button>
         </DialogActions>
       </Dialog>

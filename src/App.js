@@ -6,6 +6,8 @@ import { AppProvider } from "./code/Components/context/ContextState"
 import { LandingPage } from "./code/pages/Home"
 import Footer from "./code/layouts/Footer"
 import MenuPage from "./code/pages/Menu/MenuPage"
+import About from "./code/pages/About"
+import ContactUs from "./code/pages/Contact"
 
 function App() {
   return (
@@ -18,16 +20,8 @@ function App() {
               path="/order"
               component={() => <div>Explore Our Fleets</div>}
             />
-            <Route
-              exact
-              path="/about"
-              component={() => <div>Explore Our Fleets</div>}
-            />
-            <Route
-              exact
-              path="/contact"
-              component={() => <div>Explore Our Fleets</div>}
-            />
+            <Route exact path="/about" render={() => <About />} />
+            <Route exact path="/contact" render={() => <ContactUs />} />
             <Route exact path="/menu" render={() => <MenuPage />} />
             <Route exact path="/" render={() => <LandingPage />} />
           </Switch>

@@ -133,7 +133,7 @@ const useStyles = makeStyles((theme) => ({
     width: "187px",
     [theme.breakpoints.down("sm")]: {
       height: "30.6px",
-      width: "147px",
+      width: "127px",
       borderRadius: ".8em",
     },
   },
@@ -143,7 +143,7 @@ const useStyles = makeStyles((theme) => ({
     width: "187px",
     [theme.breakpoints.down("sm")]: {
       height: "30.6px",
-      width: "147px",
+      width: "127px",
       borderRadius: ".8em",
     },
   },
@@ -205,10 +205,14 @@ const Menu = ({ type, infoData, alt, disc }) => {
         <Grid container direction="row" justify="center" align="center">
           <Grid
             item
-            style={{ width: "192px", marginTop: "5em", marginRight: "3em" }}
+            style={{
+              width: matchesSM ? "117px" : "192px",
+              marginTop: "5em",
+              marginRight: matchesSM ? 0 : "3em",
+            }}
           >
             <Button className={classes.book} variant="contained">
-              BOOK A TABLE
+              BOOK
             </Button>
           </Grid>
           <Grid item style={{ width: "192px", marginTop: "5em" }}>
