@@ -170,13 +170,13 @@ const Menu = ({ type, infoData, alt, disc }) => {
               }}
             />
           </Grid>
-          {infoData.map(({ src, title }) => (
+          {infoData.map(({ src, title, price }) => (
             <>
               <Grid
                 container
                 style={{
                   marginTop: "2em",
-                  width: matchesSM ? "25em" : "23em",
+                  width: matchesSM ? "25em" : "25em",
                   marginLeft: matchesSM ? "0em" : "3em",
                   marginRight: matchesSM ? "6em" : "1em",
                 }}
@@ -188,7 +188,14 @@ const Menu = ({ type, infoData, alt, disc }) => {
                 </Grid>
                 <Grid item style={{ marginLeft: "1em" }}>
                   <Typography className={classes.title}>{title}</Typography>
+                  <Typography
+                    className={classes.title}
+                    style={{ fontSize: 18, color: "red", marginLeft: "2em" }}
+                  >
+                    {price}$
+                  </Typography>
                 </Grid>
+
                 <Grid
                   item
                   style={{

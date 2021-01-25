@@ -109,10 +109,10 @@ const datas = {
       index: 3,
       title: "Okro Soup",
       sub: "General",
-      body: `The soup is made with okra and water 
-              leaves together with dried fish, meat and snails, 
-              as well as seasonings and spice.The meal takes about half an hour to prepare,
-               and is often served with Pounded yam, fufu or Garri.`,
+      body: `The soup is made with okro and water 
+             leaves together with dried fish, meat and snails, 
+             as well as seasonings and spice.The meal takes about half an hour to prepare,
+             and is often served with Pounded yam, fufu or Garri.`,
       src: okra,
       imgtitle: "okra soup",
     },
@@ -120,11 +120,10 @@ const datas = {
       index: 4,
       title: "Jollof fice",
       sub: "General",
-      body: `The soup is made with okra and water 
-              leaves together with dried fish, meat and snails, 
-              as well as seasonings and spice.The meal takes about 
-              half an hour to prepare,
-              and is often served with Pounded yam, fufu or Garri.`,
+      body: `Jollof rice is a West African dish that’s a staple in most households.
+             It definitely was a staple in my house growing up,
+             and  at parties, where you can rest assure that there will be
+            pans and pans of it. `,
       src: jollof,
       imgtitle: "Jollof rice",
     },

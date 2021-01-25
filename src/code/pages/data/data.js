@@ -55,6 +55,27 @@ import sausage from "./assets/foodIamges/springrolls.jpeg"
 import pufpuf from "./assets/foodIamges/purfpurf.jpeg"
 import chinchin from "./assets/foodIamges/chinchin.jpeg"
 import cakes from "./assets/foodIamges/cake.jpeg"
+import chikkencassorle from "./assets/foodIamges/chicken casserole.jpeg"
+import sherededBeef from "./assets/foodIamges/shredded beef sauce.jpg"
+import sherededchicken from "./assets/foodIamges/shredded chicken .jpeg"
+import fishsauce from "./assets/foodIamges/fish sauce wuth veg.jpeg"
+import prawnchili from "./assets/foodIamges/chili garlic prawns.jpeg"
+import shrimpgarlic from "./assets/foodIamges/shrimps in garkix.jpeg"
+import sour from "./assets/foodIamges/sweet and sour.jpeg"
+import eba from "./assets/foodIamges/eba.jpeg"
+import amala from "./assets/foodIamges/amala.jpeg"
+import semo from "./assets/foodIamges/semovitaweb.jpg"
+import wheat from "./assets/foodIamges/wheat.jpeg"
+import poundedyam from "./assets/foodIamges/poundo yam.jpeg"
+import fufu from "./assets/foodIamges/fufu.jpeg"
+import offada from "./assets/foodIamges/ofada rice.jpeg"
+import steamrice from "./assets/foodIamges/steamed rice.jpeg"
+import nativerice from "./assets/foodIamges/native jollof.jpeg"
+import prawnrice from "./assets/foodIamges/prawn rice.jpeg"
+import ricebeans from "./assets/foodIamges/rice and beans.jpeg"
+import beans from "./assets/foodIamges/beans (1).jpg"
+import ewaganyi from "./assets/foodIamges/ewagoyin with dodo.jpeg"
+import ewaganyieja from "./assets/foodIamges/ewagoyin with eja kika.jpeg"
 
 export const menus = [
   {
@@ -100,21 +121,87 @@ export const menus = [
         index: 0,
         title: "Jolof Rice",
         src: jollof,
+        price: 5,
       },
       {
         index: 1,
         title: "Fried Rice",
         src: friedRice,
+        price: 8,
       },
       {
         index: 2,
         title: "Coconout Rice",
         src: coconutrice,
+        price: 7,
       },
       {
         index: 3,
         title: "Chinese rice ",
         src: chinese,
+        price: 10,
+      },
+      {
+        index: 4,
+        title: "Offada Rice",
+        src: offada,
+        price: 10,
+      },
+      {
+        index: 5,
+        title: "Plain steam Rice",
+        src: steamrice,
+        price: 5,
+      },
+      {
+        index: 6,
+        title: "Native Rice",
+        src: nativerice,
+        price: 10,
+      },
+      {
+        index: 7,
+        title: "Prawn Rice",
+        src: prawnrice,
+        price: 12,
+      },
+      {
+        index: 8,
+        title: "Rice beans",
+        src: ricebeans,
+        price: 5,
+      },
+    ],
+  },
+  {
+    type: "Beans Meals",
+    disc: `Beans is one of the most common foods in Nigeria.
+           Prepared in a variety of ways, it is known for it much protein`,
+    alt: "beans meal",
+    info: [
+      {
+        index: 0,
+        title: "Beans porridge",
+        src: beans,
+        price: 10,
+      },
+      {
+        index: 1,
+        title: "Rice and beans",
+        src: ricebeans,
+        price: 10,
+      },
+      {
+        index: 2,
+        title: "Ewa aganyi with sauce with plantain and ejakika",
+        src: ewaganyieja,
+        price: 20,
+      },
+      {
+        index: 3,
+        title: "Ewa aganyi with plantain alone",
+        src: ewaganyi,
+        price: 15,
       },
     ],
   },
@@ -130,26 +217,31 @@ export const menus = [
         index: 0,
         title: "Boiled yam",
         src: yamEgg,
+        price: 10,
       },
       {
         index: 1,
         title: "Crispy Fried yam",
         src: crispyfriedyam,
+        price: 20,
       },
       {
         index: 2,
         title: "Yamarita",
         src: yamarita,
+        price: 10,
       },
       {
         index: 3,
         title: "Wedges potatoes",
         src: potatoes,
+        price: 5,
       },
       {
         index: 4,
         title: "Yam pottage [ASARO]",
         src: asaro,
+        price: 10,
       },
     ],
   },
@@ -164,41 +256,49 @@ export const menus = [
         index: 0,
         title: "Eforiro{spinach soup] ",
         src: efforiro,
+        price: 5,
       },
       {
         index: 1,
         title: "Egusi soup [melon soup] ",
         src: egusi,
+        price: 6,
       },
       {
         index: 2,
         title: "Banga [palm nuts extracts] ",
         src: banga,
+        price: 6,
       },
       {
         index: 3,
         title: "Ewedu and gbegiri",
         src: ewedugbegiri,
+        price: 7,
       },
       {
         index: 4,
         title: "Ogbono soup (Draw Soup)",
         src: ogbono,
+        price: 8,
       },
       {
         index: 5,
         title: "Afang",
         src: afang,
+        price: 7,
       },
       {
         index: 6,
         title: "Okro",
         src: Okro,
+        price: 3,
       },
       {
         index: 7,
         title: "Bitter Leaf",
         src: bitterleaf,
+        price: 10,
       },
     ],
   },
@@ -211,16 +311,61 @@ export const menus = [
         index: 0,
         title: "Curry sauce",
         src: curysauce,
+        price: 10,
       },
       {
         index: 1,
         title: "Egg sauce",
         src: eggsauce,
+        price: 10,
       },
       {
         index: 2,
         title: "Meatballs sauce",
         src: meatbals,
+        price: 10,
+      },
+      {
+        index: 3,
+        title: "Chicken casserole",
+        src: chikkencassorle,
+        price: 25,
+      },
+      {
+        index: 4,
+        title: "beef sauce with vegetables",
+        src: sherededBeef,
+        price: 20,
+      },
+      {
+        index: 5,
+        title: "chicken sauce with vegetables",
+        src: sherededchicken,
+        price: 20,
+      },
+      {
+        index: 5,
+        title: "Fish sauce with vegetables",
+        src: fishsauce,
+        price: 15,
+      },
+      {
+        index: 6,
+        title: "Prawn in chili sauce",
+        src: prawnchili,
+        price: 25,
+      },
+      {
+        index: 7,
+        title: "Shrimp in garlic sauce",
+        src: shrimpgarlic,
+        price: 15,
+      },
+      {
+        index: 8,
+        title: "Sweet n sour meal with a choice of protein ",
+        src: sour,
+        price: 20,
       },
     ],
   },
@@ -233,56 +378,67 @@ export const menus = [
         index: 0,
         title: "Goat Peppersoup",
         src: goat,
+        price: 15,
       },
       {
         index: 1,
         title: "Catfish Pepersoup",
         src: catfish,
+        price: 20,
       },
       {
         index: 2,
         title: "Tilapia Paper Mixed",
         src: peperedfish,
+        price: 10,
       },
       {
         index: 3,
-        title: "Peppered snail",
+        title: "Peppered snail (3pieces)",
         src: snail,
+        price: 20,
       },
       {
         index: 4,
         title: "Assorted meat pepper",
         src: assorted,
+        price: 15,
       },
       {
         index: 5,
-        title: "Chicken Mixed pepper",
+        title: "Chicken Drum sticks",
         src: chickenDrumsticks,
+        price: 20,
       },
       {
         index: 6,
         title: "Asun",
         src: asun,
+        price: 20,
       },
       {
         index: 7,
         title: "Nkwobi",
         src: nkwobi,
+        price: 20,
       },
       {
         index: 8,
         title: "Barbecue chicken",
         src: barbecue,
+        price: 15,
       },
       {
         index: 9,
         title: "Peppered turkey",
         src: turkey,
+        price: 20,
       },
       {
         index: 10,
         title: "Peppered pomo",
         src: pomo,
+        price: 10,
       },
     ],
   },
@@ -295,16 +451,19 @@ export const menus = [
         index: 0,
         title: "Stir fry pasta with vegetables",
         src: spagveggi,
+        price: 15,
       },
       {
         index: 1,
         title: "Spaghetti with shredded beef",
         src: spagbeef,
+        price: 20,
       },
       {
         index: 1,
-        title: "Spaghetti with shredded beef",
+        title: "Spaghetti with meatballs",
         src: spagballs,
+        price: 20,
       },
     ],
   },
@@ -317,11 +476,13 @@ export const menus = [
         index: 0,
         title: "Plantain",
         src: plantain,
+        price: 3,
       },
       {
         index: 1,
         title: "Moimoi Moimoin",
         src: moimoi,
+        price: 5,
       },
     ],
   },
@@ -333,32 +494,38 @@ export const menus = [
       {
         index: 0,
         title: "Amala",
-        src: plantain,
+        src: amala,
+        price: 3,
       },
       {
         index: 1,
         title: "Eba",
-        src: moimoi,
+        src: eba,
+        price: 2,
       },
       {
         index: 2,
         title: "Semolina",
-        src: moimoi,
+        src: semo,
+        price: 3,
       },
       {
         index: 3,
         title: "Wheat",
-        src: moimoi,
+        src: wheat,
+        price: 3,
       },
       {
         index: 3,
         title: "Pounded Yam",
-        src: moimoi,
+        src: poundedyam,
+        price: 6,
       },
       {
         index: 3,
         title: "Fufu",
-        src: moimoi,
+        src: fufu,
+        price: 3,
       },
     ],
   },
@@ -371,16 +538,19 @@ export const menus = [
         index: 0,
         title: "Meat Pie",
         src: meatpie,
+        price: 3,
       },
       {
         index: 1,
         title: "Chicken pie",
         src: chickenpie,
+        price: 3.5,
       },
       {
         index: 2,
         title: "Sausage rolls",
         src: sausage,
+        price: 2,
       },
       {
         index: 3,
