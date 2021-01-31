@@ -300,21 +300,6 @@ const Header = ({ back, button, header }) => {
               </ListItemText>
             </ListItem>
           ))}
-          <ListItem
-            onClick={() => {
-              setOpenDrawer(false)
-              setValue(5)
-            }}
-            divider
-            component={Link}
-            to="/order"
-            selected={value === 5}
-            classes={{ selected: classes.drawerItemSelected }}
-          >
-            <ListItemText className={classes.drawerItem} disableTypography>
-              Order Online
-            </ListItemText>
-          </ListItem>
         </List>
       </SwipeableDrawer>
       <IconButton

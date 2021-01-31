@@ -10,61 +10,7 @@ import background from "../assets/banners/ban3.jpg"
 import { useTheme } from "@material-ui/styles"
 import { AppContext } from "../../Components/context/ContextState"
 import CustomizedDialogs from "./Order"
-
-const menuMeals = [
-  {
-    index: "1",
-    type: "Breakrast meals",
-  },
-  {
-    index: "2",
-    type: "Rice meals",
-  },
-  {
-    index: "3",
-    type: "Yam meals",
-  },
-  {
-    index: "4",
-    type: "Yam meals",
-  },
-  {
-    index: "5",
-    type: "Soup",
-  },
-  {
-    index: "6",
-    type: "Sauce",
-  },
-  {
-    index: "7",
-    type: "Hot spot special",
-  },
-  {
-    index: "8",
-    type: "Spagetti pasta",
-  },
-  {
-    index: "9",
-    type: "Sides",
-  },
-  {
-    index: "10",
-    type: "PLANTAIN MEAL",
-  },
-  {
-    index: "11",
-    type: "SNACKS",
-  },
-  {
-    index: "12",
-    type: "SMALL CHOPS ",
-  },
-  {
-    index: "13",
-    type: "BULK ORDERS",
-  },
-]
+import { bulk } from "../data/data"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -153,7 +99,6 @@ const Menu = ({ type, infoData, alt, disc }) => {
 
   const theme = useTheme()
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"))
-  const matchesMD = useMediaQuery(theme.breakpoints.down("md"))
   const classes = useStyles()
   return (
     <div className={classes.root}>
@@ -170,7 +115,7 @@ const Menu = ({ type, infoData, alt, disc }) => {
               }}
             />
           </Grid>
-          {infoData.map(({ src, title, price }) => (
+          {infoData.map(({ src, title, price, index }) => (
             <>
               <Grid
                 container
@@ -184,7 +129,12 @@ const Menu = ({ type, infoData, alt, disc }) => {
                 alignItems="stretch"
               >
                 <Grid item className={classes.image}>
-                  <img className={classes.img} alt={alt} src={src} />
+                  <img
+                    className={classes.img}
+                    key={index}
+                    alt={alt}
+                    src={src}
+                  />
                 </Grid>
                 <Grid item style={{ marginLeft: "1em" }}>
                   <Typography className={classes.title}>{title}</Typography>
@@ -210,18 +160,6 @@ const Menu = ({ type, infoData, alt, disc }) => {
           ))}
         </Grid>
         <Grid container direction="row" justify="center" align="center">
-          <Grid
-            item
-            style={{
-              width: matchesSM ? "117px" : "192px",
-              marginTop: "5em",
-              marginRight: matchesSM ? 0 : "3em",
-            }}
-          >
-            <Button className={classes.book} variant="contained">
-              BOOK
-            </Button>
-          </Grid>
           <Grid item style={{ width: "192px", marginTop: "5em" }}>
             <Button
               className={classes.book1}

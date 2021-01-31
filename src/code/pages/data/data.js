@@ -76,6 +76,13 @@ import ricebeans from "./assets/foodIamges/rice and beans.jpeg"
 import beans from "./assets/foodIamges/beans (1).jpg"
 import ewaganyi from "./assets/foodIamges/ewagoyin with dodo.jpeg"
 import ewaganyieja from "./assets/foodIamges/ewagoyin with eja kika.jpeg"
+import friedbeef from "./assets/foodIamges/fried beef stew.jpg"
+import oha from "./assets/foodIamges/oha.jpeg"
+import seafood from "./assets/foodIamges/seafood okro.jpeg"
+import steamedrice from "./assets/foodIamges/steamed rice.jpeg"
+import edikikong from "./assets/foodIamges/edikiakong soup.jpg"
+import ayamase from "./assets/foodIamges/ayamase sauce.jpeg"
+import pepperdgoat from "./assets/foodIamges/peppered goat meat.jpg"
 
 export const menus = [
   {
@@ -296,6 +303,12 @@ export const menus = [
       },
       {
         index: 7,
+        title: "Seafood Okro",
+        src: seafood,
+        price: 5,
+      },
+      {
+        index: 7,
         title: "Bitter Leaf",
         src: bitterleaf,
         price: 10,
@@ -344,25 +357,25 @@ export const menus = [
         price: 20,
       },
       {
-        index: 5,
+        index: 6,
         title: "Fish sauce with vegetables",
         src: fishsauce,
         price: 15,
       },
       {
-        index: 6,
+        index: 7,
         title: "Prawn in chili sauce",
         src: prawnchili,
         price: 25,
       },
       {
-        index: 7,
+        index: 8,
         title: "Shrimp in garlic sauce",
         src: shrimpgarlic,
         price: 15,
       },
       {
-        index: 8,
+        index: 9,
         title: "Sweet n sour meal with a choice of protein ",
         src: sour,
         price: 20,
@@ -566,6 +579,231 @@ export const menus = [
         index: 5,
         title: "Cakes",
         src: cakes,
+      },
+    ],
+  },
+  {
+    type: "Others",
+    disc: `2.2 Litres Bowl.`,
+    alt: "bowl",
+    info: [
+      {
+        index: 0,
+        title: "Stew with beef",
+        src: friedbeef,
+        price: 40,
+      },
+      {
+        index: 1,
+        title: "Stew with chicken",
+        src: chickenDrumsticks,
+        price: 50,
+      },
+      {
+        index: 2,
+        title: "Stew with fish",
+        src: peperedfish,
+        price: 60,
+      },
+      {
+        index: 3,
+        title: "Stew with turkey",
+        src: turkey,
+        price: 50,
+      },
+      {
+        index: 4,
+        title: "EGUSI AND EFORIRO",
+        src: egusi,
+        price: 50,
+      },
+      {
+        index: 5,
+        title: "afang",
+        src: afang,
+        price: 55,
+      },
+      {
+        index: 6,
+        title: "Oha",
+        src: oha,
+        price: 60,
+      },
+      {
+        index: 7,
+        title: "ogbono",
+        src: ogbono,
+        price: 60,
+      },
+      {
+        index: 8,
+        title: "Seafood Okro",
+        src: seafood,
+        price: 60,
+      },
+      {
+        index: 9,
+        title: "Yam pottage alone",
+        src: asaro,
+        price: 40,
+      },
+      {
+        index: 11,
+        title: "Pottage with protien",
+        src: asaro,
+        price: 70,
+      },
+      {
+        index: 12,
+        title: "3.4 litres assorted meat stew",
+        src: friedbeef,
+        price: 60,
+      },
+    ],
+  },
+]
+
+export const bulk = [
+  {
+    title: "Bulk Orders",
+    disc: `Meals in this category is served in a in tray [foil pan]`,
+    alt: "general",
+    info: [
+      {
+        index: 0,
+        title: "Jollof Rice",
+        src: jollof,
+        low: 35,
+        medium: 60,
+        large: 90,
+      },
+      {
+        index: 1,
+        title: "Fried rice",
+        src: friedRice,
+        low: 50,
+        medium: 80,
+        large: 130,
+      },
+      {
+        index: 2,
+        title: "Yam pottage",
+        src: asaro,
+        low: 60,
+        medium: 80,
+        large: 120,
+      },
+      {
+        index: 3,
+        title: "Steamed rice",
+        src: steamedrice,
+        low: 20,
+        medium: 30,
+        large: 40,
+      },
+      {
+        index: 4,
+        title: "Egusi soup",
+        src: egusi,
+        low: 70,
+        medium: 100,
+        large: 120,
+      },
+      {
+        index: 5,
+        title: "Vegetable soup",
+        src: edikikong,
+        low: 80,
+        medium: 100,
+        large: 130,
+      },
+      {
+        index: 6,
+        title: "Oha soup",
+        src: oha,
+        low: 100,
+        medium: 130,
+        large: 160,
+      },
+      {
+        index: 7,
+        title: "Biterleaf soup",
+        src: bitterleaf,
+        low: 100,
+        medium: 120,
+        large: 130,
+      },
+      {
+        index: 8,
+        title: "Ayamase sauce",
+        src: ayamase,
+        low: 80,
+        medium: 100,
+        large: 150,
+      },
+      {
+        index: 9,
+        title: "fried plantain",
+        src: plantain,
+        low: 60,
+        medium: 90,
+        large: 100,
+      },
+      {
+        index: 10,
+        title: "Ewa aganyi",
+        src: ewaganyi,
+        low: 70,
+        medium: 90,
+        large: 120,
+      },
+      {
+        index: 11,
+        title: "Peppered turkey",
+        src: turkey,
+        low: 65,
+        medium: 90,
+        large: 110,
+      },
+      {
+        index: 12,
+        title: "Peppered chicken",
+        src: chickenDrumsticks,
+        low: 45,
+        medium: 70,
+        large: 90,
+      },
+      {
+        index: 13,
+        title: "Peppered goatmeat",
+        src: pepperdgoat,
+        low: 130,
+        medium: 170,
+        large: 220,
+      },
+      {
+        index: 14,
+        title: "Peppered beef",
+        src: friedbeef,
+        low: 110,
+        medium: 130,
+        large: 180,
+      },
+      {
+        index: 15,
+        title: "Assorted meat",
+        src: assorted,
+        low: 100,
+        medium: 140,
+        large: 170,
+      },
+      {
+        index: 16,
+        title: "Assorted meat",
+        src: fish,
+        low: 60,
+        medium: 90,
+        large: 130,
       },
     ],
   },

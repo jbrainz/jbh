@@ -293,6 +293,12 @@ export default function CustomizedDialogs() {
     } else {
       console.log(email, address, phone, select)
     }
+    const newWindow = window.open(
+      `//api.whatsapp.com/send?phone=+2348139714746&text=${phone}, ${select}, ${address}`,
+      "_blank",
+      "noopener,noreferrer",
+    )
+    if (newWindow) newWindow.opener = null
   }
 
   return (
@@ -390,10 +396,7 @@ export default function CustomizedDialogs() {
             onClick={onSubmit}
             color="secondary"
           >
-            Pay Now ?
-          </Button>
-          <Button autoFocus onClick={onSubmit} color="secondary">
-            On Delivery
+            Order
           </Button>
         </DialogActions>
       </Dialog>

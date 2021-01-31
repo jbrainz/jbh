@@ -3,6 +3,7 @@ import Menu from "./Menu"
 import { menus } from "../data/data"
 import Header from "../../layouts/Header"
 import imgBack from "../../assets/img/menuback.jpg"
+import Bulk from "./Bulk"
 const menu = menus
 
 const MenuPage = () => {
@@ -18,6 +19,7 @@ const MenuPage = () => {
             type={data.type}
           />
         ))}
+        <Bulk />
       </div>
     </>
   )
