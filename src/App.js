@@ -15,11 +15,6 @@ function App() {
       <ThemeProvider theme={theme}>
         <BrowserRouter>
           <Switch>
-            <Route
-              exact
-              path="/order"
-              component={() => <div>Explore Our Fleets</div>}
-            />
             <Route exact path="/about" render={() => <About />} />
             <Route exact path="/contact" render={() => <ContactUs />} />
             <Route exact path="/menu" render={() => <MenuPage />} />

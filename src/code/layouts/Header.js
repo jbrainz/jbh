@@ -185,13 +185,16 @@ function ElevationScroll(props) {
 }
 const Header = ({ back, button, header }) => {
   const history = useHistory()
-  const { selectedIndex, setSelectedIndex, value, setValue } = useContext(
-    AppContext,
-  )
+  const {
+    selectedIndex,
+    setSelectedIndex,
+    value,
+    setValue,
+    sendWhatsapp,
+  } = useContext(AppContext)
   const theme = useTheme()
   const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent)
   const matches = useMediaQuery(theme.breakpoints.down("md"))
-  const matchesSM = useMediaQuery(theme.breakpoints.down("xs"))
   const matchesS = useMediaQuery(theme.breakpoints.down("sm"))
 
   const [openDrawer, setOpenDrawer] = useState(false)
@@ -357,6 +360,7 @@ const Header = ({ back, button, header }) => {
               variant="contained"
               className={classes.buttonR}
               startIcon={<CustomIcon src={reserve} height={35} />}
+              onClick={() => sendWhatsapp("New Reservation")}
             >
               RESERVATION
             </Button>

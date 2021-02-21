@@ -9,6 +9,7 @@ import {
 import background from "../assets/banners/ban3.jpg"
 import { useTheme } from "@material-ui/styles"
 import { bulk } from "../data/data"
+import { AppContext } from "../../Components/context/ContextState"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -93,16 +94,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const sendWhatsapp = () => {
-  const newWindow = window.open(
-    `//api.whatsapp.com/send?phone=+2348139714746&text=New Bulk Order`,
-    "_blank",
-    "noopener,noreferrer",
-  )
-  if (newWindow) newWindow.opener = null
-}
-
 const Bulk = () => {
+  const { sendWhatsapp } = useContext(AppContext)
+
   const theme = useTheme()
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"))
   const classes = useStyles()
@@ -198,7 +192,7 @@ const Bulk = () => {
               className={classes.book1}
               variant="contained"
               color="secondary"
-              onClick={() => sendWhatsapp()}
+              onClick={() => sendWhatsapp("Bulk Order")}
             >
               ORDER
             </Button>

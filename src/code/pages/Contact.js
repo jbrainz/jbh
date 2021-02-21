@@ -31,9 +31,7 @@ const ContactUs = () => {
     <>
       <Header header="Contact Us Now" back={banner} />
       <div className={classes.container}>
-        <Typography className={classes.chef}>
-          Know Where to find us we.
-        </Typography>
+        <Typography className={classes.chef}>Know Where to find us.</Typography>
         <Contact />
       </div>
     </>

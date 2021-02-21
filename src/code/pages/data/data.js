@@ -376,7 +376,7 @@ export const menus = [
       },
       {
         index: 9,
-        title: "Sweet n sour meal with a choice of protein ",
+        title: "Sweet n sour meal with a choice of protein",
         src: sour,
         price: 20,
       },
@@ -613,7 +613,7 @@ export const menus = [
       },
       {
         index: 4,
-        title: "EGUSI AND EFORIRO",
+        title: "Egusi And Eforiro",
         src: egusi,
         price: 50,
       },

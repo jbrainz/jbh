@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
   header: {
     marginLeft: "5%",
     marginTop: "150px",
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down("sm")]: {
       marginLeft: 0,
     },
   },
@@ -183,42 +183,42 @@ const menuData = [
     imgtitle: "yam",
   },
   {
-    index: 7,
+    index: 8,
     title: "Yam pottage",
     disc: `Yam with vegetables and and meat or boiled fish, soft and smoothe`,
     src: yammeal,
     imgtitle: "yam-pottage",
   },
   {
-    index: 8,
+    index: 9,
     title: "Efo Riro",
     disc: `stirred leafy vegetable, garnished with fish and meats, and some spices`,
     src: eforiro,
     imgtitle: "Efo riro",
   },
   {
-    index: 9,
+    index: 10,
     title: "Banga",
     disc: `Palm nut soup, it’s a Delta/Urhobo (Ngerian south) favourite`,
     src: bangasoup,
     imgtitle: "banga",
   },
   {
-    index: 10,
+    index: 11,
     title: "Afang",
     disc: ` It is also very nutritious as the soup consists mainly of vegetables`,
     src: afang,
     imgtitle: "afang",
   },
   {
-    index: 11,
+    index: 12,
     title: "Okra",
     disc: ` Just like ogbono soup and Ewedu soup, Okro soup has a viscous texture which makes it an acquired taste.`,
     src: okra,
     imgtitle: "okra",
   },
   {
-    index: 12,
+    index: 13,
     title: "Ewa agoyin",
     disc: ` Ewa Aganyin is made up of cooked beans and pepper sauce.`,
     src: beansbread,
@@ -290,60 +290,68 @@ const SlideMenu = () => {
             </Button>
           </Grid>
         </Grid>
-        <div style={{ position: "relative", maxWidth: 300 }}>
-          <div
-            onTouchStart={(e) => handleTouchStart(e)}
-            onTouchEnd={(e) => handleTouchEnd(e)}
-            onTouchMove={(e) => handleTouchMove(e)}
-            style={{
-              display: "flex",
-              flex: 1,
-              minWidth: matchesSM ? 200 : 314,
-              overflow: "hidden",
-              transform: `translateX(-${nData.index * (100 / nDatas.length)}%)`,
-              transition: `transform 300ms cubic-bezier(0.17,0.67,0.83,0.67)`,
-              position: "absolute",
-            }}
-          >
-            {nDatas.map(({ title, sub, body, src, imgtitle, index }) => (
-              <MenuSlider
-                title={title}
-                sub={sub}
-                body={body}
-                src={src}
-                imgtitle={imgtitle}
-                key={index}
-              />
-            ))}
+        {!matchesSM ? (
+          <div style={{ position: "relative", maxWidth: 300 }}>
+            <div
+              onTouchStart={(e) => handleTouchStart(e)}
+              onTouchEnd={(e) => handleTouchEnd(e)}
+              onTouchMove={(e) => handleTouchMove(e)}
+              style={{
+                display: "flex",
+                flex: 1,
+                minWidth: matchesSM ? 200 : 314,
+                overflow: "hidden",
+                transform: `translateX(-${
+                  nData.index * (100 / nDatas.length)
+                }%)`,
+                transition: `transform 300ms cubic-bezier(0.17,0.67,0.83,0.67)`,
+                position: "absolute",
+              }}
+            >
+              {nDatas.map(({ title, sub, body, src, imgtitle, index }) => (
+                <MenuSlider
+                  title={title}
+                  sub={sub}
+                  body={body}
+                  src={src}
+                  imgtitle={imgtitle}
+                  key={index}
+                />
+              ))}
+            </div>
+            <Grid container direction="row">
+              {!matchesSM ? (
+                <Grid
+                  item
+                  container
+                  style={{ marginTop: 400, marginLeft: -20 }}
+                >
+                  <Button
+                    disableRipple
+                    onClick={() => nextData()}
+                    disabled={nData.index === datas.property.length - 1}
+                  >
+                    <CustomIcon src={arrowR} />
+                  </Button>
+                  <Button
+                    disableRipple
+                    onClick={() => prevData()}
+                    disabled={nData.index === 0}
+                  >
+                    <CustomIcon src={arrowL} />
+                  </Button>
+                </Grid>
+              ) : null}
+            </Grid>
           </div>
-          <Grid container direction="row">
-            {!matchesSM ? (
-              <Grid item container style={{ marginTop: 400, marginLeft: -20 }}>
-                <Button
-                  disableRipple
-                  onClick={() => nextData()}
-                  disabled={nData.index === datas.property.length - 1}
-                >
-                  <CustomIcon src={arrowR} />
-                </Button>
-                <Button
-                  disableRipple
-                  onClick={() => prevData()}
-                  disabled={nData.index === 0}
-                >
-                  <CustomIcon src={arrowL} />
-                </Button>
-              </Grid>
-            ) : null}
-          </Grid>
-        </div>
+        ) : null}
       </div>
       <Grid
         container
         justify={!matchesSM ? "center" : "flex-start"}
         align="center"
         style={{
-          marginTop: matchesSM ? "40em" : "10em",
+          marginTop: matchesSM ? "1em" : "10em",
           background: !matchesSM
             ? "linear-gradient(45deg, #fff  30%, #ccc 100%)"
             : "",

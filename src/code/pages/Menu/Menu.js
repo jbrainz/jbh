@@ -10,7 +10,6 @@ import background from "../assets/banners/ban3.jpg"
 import { useTheme } from "@material-ui/styles"
 import { AppContext } from "../../Components/context/ContextState"
 import CustomizedDialogs from "./Order"
-import { bulk } from "../data/data"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -105,8 +104,12 @@ const Menu = ({ type, infoData, alt, disc }) => {
       <Grid container>
         <Grid container>
           <Grid item style={{ width: "100%" }}>
-            <Typography className={classes.type}>{type}</Typography>
-            <Typography className={classes.disc}>{disc}</Typography>
+            <Typography key={alt} className={classes.type}>
+              {type}
+            </Typography>
+            <Typography key={alt} className={classes.disc}>
+              {disc}
+            </Typography>
             <Grid
               style={{
                 height: ".1em",
@@ -137,10 +140,13 @@ const Menu = ({ type, infoData, alt, disc }) => {
                   />
                 </Grid>
                 <Grid item style={{ marginLeft: "1em" }}>
-                  <Typography className={classes.title}>{title}</Typography>
+                  <Typography key={index} className={classes.title}>
+                    {title}
+                  </Typography>
                   <Typography
                     className={classes.title}
                     style={{ fontSize: 18, color: "red", marginLeft: "2em" }}
+                    key={index}
                   >
                     {price}$
                   </Typography>

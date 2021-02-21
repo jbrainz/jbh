@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useContext } from "react"
 import {
   Grid,
   Typography,
@@ -8,6 +8,7 @@ import {
 } from "@material-ui/core"
 import back from "../data/assets/foodIamges/open.jpg"
 import { useTheme } from "@material-ui/styles"
+import { AppContext } from "../../Components/context/ContextState"
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -77,6 +78,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 const Contact = () => {
+  const { sendWhatsapp } = useContext(AppContext)
+
   const classes = useStyles()
   const theme = useTheme()
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"))
@@ -129,7 +132,11 @@ const Contact = () => {
                 </Typography>
               </Grid>
               <Grid item style={{ width: "192px", marginTop: "3em" }}>
-                <Button className={classes.book} variant="contained">
+                <Button
+                  onClick={() => sendWhatsapp("Table Reservation")}
+                  className={classes.book}
+                  variant="contained"
+                >
                   BOOK A TABLE
                 </Button>
               </Grid>

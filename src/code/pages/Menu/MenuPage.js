@@ -16,6 +16,7 @@ const MenuPage = () => {
             disc={data.disc}
             infoData={data.info}
             alt={data.alt}
+            key={data.alt}
             type={data.type}
           />
         ))}

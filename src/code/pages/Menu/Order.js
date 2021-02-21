@@ -36,126 +36,161 @@ const menus = [
   },
   {
     index: 5,
-    type: "Soup",
-    title: "Eforiro{spinach soup]",
+    type: "Sauce",
+    title: "Chicken casserole",
   },
   {
     index: 6,
-    type: "Soup",
-    title: "Banga [palm nuts extracts]",
+    type: "Sauce",
+    title: "beef sauce with vegetables",
   },
   {
     index: 7,
-    type: "Soup",
-    title: "Egusi soup [melon soup]",
+    type: "Sauce",
+    title: "chicken sauce with vegetables",
   },
   {
     index: 8,
-    type: "Soup",
-    title: "Ewedu and gbegiri",
+    type: "Sauce",
+    title: "fish sauce with vegetables",
   },
   {
     index: 9,
-    type: "Soup",
-    title: "Ogbono soup (Draw Soup)",
+    type: "Sauce",
+    title: "pawn and chili sauce",
   },
   {
     index: 10,
-    type: "Soup",
-    title: "Afang",
+    type: "Sauce",
+    title: "Shrimp in garlic sauce",
   },
   {
     index: 11,
-    type: "Soup",
-    title: "Okro",
+    type: "Sauce",
+    title: "Sweet n sour meal with a choice of protein",
   },
   {
     index: 12,
     type: "Soup",
-    title: "Bitterleaf",
+    title: "Eforiro{spinach soup]",
   },
   {
     index: 13,
-    type: "Hot Spot Special",
-    title: "Goat Peppersoup",
+    type: "Soup",
+    title: "Banga [palm nuts extracts]",
   },
   {
     index: 14,
-    type: "Hot Spot Special",
-    title: "Catfish Pepersoup",
+    type: "Soup",
+    title: "Egusi soup [melon soup]",
   },
   {
     index: 15,
-    type: "Hot Spot Special",
-    title: "Tilapia Paper Mixed",
+    type: "Soup",
+    title: "Ewedu and gbegiri",
   },
   {
     index: 16,
-    type: "Hot Spot Special",
-    title: "Peppered snail",
+    type: "Soup",
+    title: "Ogbono soup (Draw Soup)",
   },
   {
     index: 17,
-    type: "Hot Spot Special",
-    title: "Assorted meat pepper",
+    type: "Soup",
+    title: "Afang",
   },
   {
     index: 18,
-    type: "Hot Spot Special",
-    title: "Chicken Mixed pepper",
+    type: "Soup",
+    title: "Okro",
   },
   {
     index: 19,
-    type: "Hot Spot Special",
-    title: "Asun",
+    type: "Soup",
+    title: "Bitterleaf",
   },
   {
     index: 20,
     type: "Hot Spot Special",
-    title: "Nkwobi",
+    title: "Goat Peppersoup",
+  },
+  {
+    index: 21,
+    type: "Hot Spot Special",
+    title: "Catfish Pepersoup",
   },
   {
     index: 22,
     type: "Hot Spot Special",
-    title: "Peppered Turkey",
+    title: "Tilapia Paper Mixed",
+  },
+  {
+    index: 23,
+    type: "Hot Spot Special",
+    title: "Peppered snail",
   },
   {
     index: 24,
+    type: "Hot Spot Special",
+    title: "Assorted meat pepper",
+  },
+  {
+    index: 25,
+    type: "Hot Spot Special",
+    title: "Chicken Mixed pepper",
+  },
+  {
+    index: 26,
+    type: "Hot Spot Special",
+    title: "Asun",
+  },
+  {
+    index: 27,
+    type: "Hot Spot Special",
+    title: "Nkwobi",
+  },
+  {
+    index: 28,
+    type: "Hot Spot Special",
+    title: "Peppered Turkey",
+  },
+  {
+    index: 29,
     type: "Yam Meals",
     title: "Boiled yam",
   },
   {
-    index: 25,
+    index: 30,
     type: "Yam Meals",
     title: "Yamarita",
   },
   {
-    index: 26,
+    index: 31,
     type: "Yam Meals",
     title: "Crispy Fried yam",
   },
   {
-    index: 27,
+    index: 32,
     type: "Yam Meals",
     title: "Wedges potatoes",
   },
   {
-    index: 28,
+    index: 33,
     type: "Yam Meals",
     title: "Yam pottage [ASARO]",
   },
   {
-    index: 29,
+    index: 34,
     type: "Rice Meals",
     title: "Jolof Rice",
   },
   {
-    index: 30,
+    index: 35,
     type: "Rice Meals",
     title: "Fried Rice",
   },
   {
-    index: 31,
+    index: 36,
     type: "Rice Meals",
     title: "Coconout Rice",
   },
@@ -165,29 +200,119 @@ const menus = [
     title: "Chineese Rice",
   },
   {
-    index: 33,
+    index: 37,
     type: "Breakfast",
     title: "Akara",
   },
   {
-    index: 34,
+    index: 38,
     type: "Breakfast",
     title: "Moi Moi",
   },
   {
-    index: 35,
+    index: 39,
     type: "Breakfast",
     title: "Yam and egg sauce",
   },
   {
-    index: 36,
+    index: 40,
     type: "Breakfast",
     title: "Omelet",
   },
   {
-    index: 37,
+    index: 41,
     type: "Breakfast",
     title: "Cereal",
+  },
+  {
+    index: 42,
+    type: "Swallow",
+    title: "Amala",
+  },
+  {
+    index: 43,
+    type: "Swallow",
+    title: "Eba",
+  },
+  {
+    index: 43,
+    type: "Swallow",
+    title: "Semolina",
+  },
+  {
+    index: 44,
+    type: "Swallow",
+    title: "Wheat",
+  },
+  {
+    index: 45,
+    type: "Swallow",
+    title: "Pounded Yam",
+  },
+  {
+    index: 46,
+    type: "Swallow",
+    title: "Fufu",
+  },
+  {
+    index: 47,
+    type: "Others",
+    title: "Stew with beef",
+  },
+  {
+    index: 48,
+    type: "Others",
+    title: "Stew with chicken",
+  },
+  {
+    index: 49,
+    type: "Others",
+    title: "Stew with fish",
+  },
+  {
+    index: 50,
+    type: "Others",
+    title: "Stew with turkey",
+  },
+  {
+    index: 51,
+    type: "Others",
+    title: "Egusi and eforiro",
+  },
+  {
+    index: 52,
+    type: "Others",
+    title: "afang",
+  },
+  {
+    index: 53,
+    type: "Others",
+    title: "oha",
+  },
+  {
+    index: 54,
+    type: "Others",
+    title: "ogbono",
+  },
+  {
+    index: 55,
+    type: "Others",
+    title: "Seafood okra",
+  },
+  {
+    index: 56,
+    type: "Others",
+    title: "Yam pottage alone",
+  },
+  {
+    index: 57,
+    type: "Others",
+    title: "Yam pottage with protien",
+  },
+  {
+    index: 57,
+    type: "Others",
+    title: "3.4 litres assorted meat stew",
   },
 ]
 const styles = (theme) => ({
@@ -205,7 +330,7 @@ const styles = (theme) => ({
 const useStyles = makeStyles((theme) => ({
   formControl: {
     margin: theme.spacing(1),
-    minWidth: 120,
+    minWidth: 100,
   },
   selectEmpty: {
     marginTop: theme.spacing(2),
@@ -213,13 +338,23 @@ const useStyles = makeStyles((theme) => ({
   inputs: {
     marginBottom: "2em",
     marginLeft: "3em",
+    [theme.breakpoints.down("sm")]: {
+      marginLeft: "0.5em",
+      marginBottom: "0.5em",
+    },
   },
   select: {
     width: "10em",
+    [theme.breakpoints.down("sm")]: {
+      width: "8em",
+    },
   },
   selectC: {
     marginLeft: "3em",
     width: "15em",
+    [theme.breakpoints.down("sm")]: {
+      width: "10em",
+    },
   },
   main: {
     backgroundColor: "#fff",
@@ -258,7 +393,7 @@ const DialogActions = withStyles((theme) => ({
 }))(MuiDialogActions)
 
 //REgex!
-const phoneRegex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im
+const phoneRegex = /^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/im
 const emailRegex = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/
 
 export default function CustomizedDialogs() {
@@ -284,21 +419,20 @@ export default function CustomizedDialogs() {
   const onSubmit = (e) => {
     e.preventDefault()
     setEr("")
-    if (email === "" || select === "" || phone === "" || address === "") {
+    if (email === "" || phone === "" || address === "") {
       setEr("All Fields Are Required!", "danger")
     } else if (!emailRegex.test(email)) {
       setEr("Invalid Email")
     } else if (!phoneRegex.test(phone)) {
       setEr("Invalid Phone")
     } else {
-      console.log(email, address, phone, select)
+      const newWindow = window.open(
+        `//api.whatsapp.com/send?phone=+2348139714746&text=${select},${phone}, ${address},${email} `,
+        "_blank",
+        "noopener,noreferrer",
+      )
+      if (newWindow) newWindow.opener = null
     }
-    const newWindow = window.open(
-      `//api.whatsapp.com/send?phone=+2348139714746&text=${phone}, ${select}, ${address}`,
-      "_blank",
-      "noopener,noreferrer",
-    )
-    if (newWindow) newWindow.opener = null
   }
 
   return (

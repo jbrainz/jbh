@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 const Footer = () => {
-  const { setValue, setSelectedIndex } = useContext(AppContext)
+  const { setValue, setSelectedIndex, sendWhatsapp } = useContext(AppContext)
   const classes = useStyles()
   return (
     <footer className={classes.footer}>
@@ -132,8 +132,8 @@ const Footer = () => {
                 component={Link}
                 onClick={() => {
                   setValue(4)
+                  sendWhatsapp("Book a table")
                 }}
-                to="/reservation"
                 className={classes.link}
               >
                 Book a table
