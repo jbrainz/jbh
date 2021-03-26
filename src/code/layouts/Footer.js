@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
 import { Link } from "react-router-dom"
-import { makeStyles, Grid, Typography, Button, Hidden } from "@material-ui/core"
+import { makeStyles, Grid, Hidden } from "@material-ui/core"
 import { AppContext } from "../Components/context/ContextState"
 
 import insta from "../assets/icons/instagram.png"
